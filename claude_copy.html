@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <title>Philantrop</title>
+        <style>
+            /* Base Styles */
+            :root {
+                --primary-color: #ffce59;
+                --secondary-color: #333333;
+                --text-color: #555555;
+                --dark-bg: #1c1c1c;
+                --light-bg: #ffffff;
+                --header-font: 'Sora', sans-serif;
+                --body-font: 'Epilogue', sans-serif;
+            }
+
+            body {
+                background-color: var(--light-bg);
+                font-family: var(--body-font);
+                font-size: 18px;
+                line-height: 1.66;
+                font-weight: 400;
+                color: var(--text-color);
+                margin: 0;
+                padding: 0;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: var(--header-font);
+                font-style: normal;
+                color: var(--secondary-color);
+            }
+
+            h1 {
+                font-size: 100px;
+                line-height: .8;
+                font-weight: 400;
+            }
+
+            h2 {
+                font-size: 80px;
+                line-height: 1;
+                font-weight: 400;
+            }
+
+            h3 {
+                font-size: 50px;
+                line-height: 1.2;
+                font-weight: 400;
+            }
+
+            h4 {
+                font-size: 30px;
+                line-height: 1.3;
+                font-weight: 600;
+            }
+
+            h5 {
+                font-size: 25px;
+                line-height: 2;
+                font-weight: 600;
+            }
+
+            h6 {
+                font-size: 20px;
+                line-height: 1.2;
+                font-weight: 600;
+            }
+
+            a {
+                color: var(--primary-color);
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            a:hover {
+                color: var(--primary-color);
+            }
+
+            /* Layout */
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -15px;
+            }
+
+            .col-12, .col-6, .col-4, .col-3, .col-8 {
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+
+            .col-12 {
+                width: 100%;
+            }
+
+            .col-8 {
+                width: 66.66%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+            .col-4 {
+                width: 33.33%;
+            }
+
+            .col-3 {
+                width: 25%;
+            }
+
+            /* Header Styles */
+            .header-transparent {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+                transition: all 0.3s ease;
+                background: rgba(0, 0, 0, 1);
+                border-bottom: none;
+            }
+
+            .header-sticky {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 1);
+                box-shadow: none;
+                animation: slideDown 0.3s ease-in-out;
+                border-bottom: none;
+            }
+
+            .header-transparent .header-inner,
+            .header-sticky .header-inner {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                padding: 15px 20px;
+                transition: all 0.3s ease;
+            }
+
+            .header-transparent .logo,
+            .header-sticky .logo {
+                width: 150px;
+                height: 60px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                transition: all 0.3s ease;
+            }
+
+            .header-transparent .button,
+            .header-sticky .button {
+                background: var(--primary-color);
+                border: none;
+                color: var(--secondary-color);
+                padding: 12px 28px;
+                font-size: 16px;
+                font-weight: 500;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .header-transparent .main-menu > li > a {
+                font-family: var(--body-font);
+                font-size: 15px;
+                line-height: 27px;
+                font-weight: 300;
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                padding: 10px 0;
+                display: block;
+                position: relative;
+                transition: all 0.3s ease;
+            }
+
+            .header-transparent .main-menu > li > a:hover {
+                color: white;
+            }
+
+            .header-transparent .main-menu > li > a:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--primary-color);
+                transition: width 0.3s ease;
+            }
+
+            .header-transparent .main-menu > li:hover > a:before {
+                width: 100%;
+            }
+
+            .header-transparent .logo-white, .header-transparent .logo-dark {
+                background-image: url('images/nj_malayalee_charity_logo.png') !important;
+            }
+
+            /* Navigation */
+            .main-menu {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                justify-content: flex-end;
+            }
+
+            .main-menu > li {
+                margin: 0 20px;
+                position: relative;
+            }
+
+            .main-menu > li > a {
+                font-family: var(--body-font);
+                font-size: 15px;
+                line-height: 27px;
+                font-weight: 300;
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                padding: 10px 0;
+                display: block;
+                position: relative;
+                transition: all 0.3s ease;
+            }
+
+            .main-menu > li > a:hover {
+                color: white;
+            }
+
+            .main-menu > li > a:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--primary-color);
+                transition: width 0.3s ease;
+            }
+
+            .main-menu > li:hover > a:before {
+                width: 100%;
+            }
+
+            /* Button Styles */
+            .button {
+                display: inline-flex;
+                align-items: center;
+                font-family: var(--body-font);
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--secondary-color);
+                background: transparent;
+                border: 2px solid var(--primary-color);
+                padding: 12px 28px;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .button:hover {
+                background: var(--primary-color);
+                color: var(--secondary-color);
+            }
+
+            .button svg {
+                margin-left: 8px;
+            }
+
+            /* Hero Section */
+            .hero-section {
+                height: 25vh;
+                position: relative;
+                overflow: hidden;
+                background-color: #000;
+                margin-top: 60px;
+            }
+
+            .hero-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Image container with gradient border */
+            .hero-background {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 40%;
+                height: 100%;
+                background-image: url('images/kathakali_with_back_light_hero_ai.jpg');
+                background-size: cover;
+                background-position: center;
+                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
+                border-left: 50px solid;
+                border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)) 1 100%;
+                opacity: 0.9;
+            }
+
+            /* Gradient overlay */
+            .hero-overlay {
+                position: absolute;
+                top: -20px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.9) 0%,
+                    rgba(0, 0, 0, 0.7) 50%,
+                    rgba(0, 0, 0, 0.5) 100%
+                );
+                z-index: 1;
+                padding-top: 20px;
+            }
+
+            .hero-content {
+                max-width: 1000px;
+                padding: 0 15px;
+                position: relative;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+                line-height: 1.4;
+                margin-bottom: 15px;
+                color: white;
+                text-align: left;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                max-width: 600px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+                line-height: 1.5;
+                margin-bottom: 30px;
+            }
+
+            .hero-mcafee-logo {
+                width: 180px;
+                height: auto;
+                margin-left: 0;
+                opacity: 0.6;
+                transition: opacity 0.3s ease;
+                filter: brightness(1.1) contrast(0.9);
+                mix-blend-mode: screen;
+            }
+
+            .hero-mcafee-logo:hover {
+                opacity: 0.8;
+            }
+
+            /* Black overlay at bottom */
+            .hero-section::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 25%;
+                background: #000;
+                z-index: 1;
+            }
+
+            /* Feature Boxes */
+            .feature-boxes {
+                display: flex;
+                width: 100%;
+                position: relative;
+                z-index: 2;
+                margin-top: 0;
+                background: transparent;
+            }
+
+            .feature-box {
+                flex: 1;
+                padding: 40px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: 250px;
+                background-size: cover;
+                background-position: center;
+                overflow: hidden;
+            }
+
+            .feature-box::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(28, 50, 71, 0.7),
+                    rgba(28, 50, 71, 0.8)
+                );
+                z-index: 1;
+            }
+
+            .feature-box:nth-child(1) {
+                background-image: url('images/charity_hands.jpeg');
+            }
+
+            .feature-box:nth-child(2) {
+                background-image: url('images/spark_kerala_event_2025.jpeg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: relative;
+                overflow: visible;
+            }
+
+            .feature-box:nth-child(2)::before {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.4),
+                    rgba(0, 0, 0, 0.5)
+                );
+                transition: opacity 0.3s ease;
+            }
+
+            /* Full-size image popup styles */
+            .feature-box:nth-child(2)::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background-image: url('images/spark_kerala_event_2025.jpeg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                transform: translate(-50%, -50%);
+                z-index: 100;
+                opacity: 0;
+                transition: all 0.3s ease;
+                pointer-events: none;
+                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+                background-color: transparent;
+            }
+
+            .feature-box:nth-child(2):hover::after {
+                width: 120%;
+                height: 120%;
+                opacity: 1;
+                backdrop-filter: blur(5px);
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+
+            .feature-box:nth-child(2):hover::before {
+                opacity: 0;
+            }
+
+            .feature-box:nth-child(2):hover .subtitle-text,
+            .feature-box:nth-child(2):hover h4,
+            .feature-box:nth-child(2):hover .link-text {
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            /* Add transition for content */
+            .feature-box:nth-child(2) .subtitle-text,
+            .feature-box:nth-child(2) h4,
+            .feature-box:nth-child(2) .link-text {
+                transition: opacity 0.3s ease;
+            }
+
+            @media (max-width: 768px) {
+                .feature-box:nth-child(2):hover::after {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .feature-box h4 {
+                color: white;
+                font-size: 24px;
+                line-height: 1.4;
+                font-weight: 300;
+                margin: 0 0 20px 0;
+                max-width: 90%;
+                position: relative;
+                z-index: 2;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                letter-spacing: 0.02em;
+            }
+
+            .feature-box .link-text {
+                color: var(--primary-color);
+                font-size: 16px;
+                font-weight: 500;
+                text-decoration: underline;
+                position: relative;
+                z-index: 2;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .feature-box .link-text:hover {
+                opacity: 0.8;
+            }
+
+            .feature-box .subtitle-text {
+                color: #ffffff;
+                font-size: 14px;
+                margin-top: 10px;
+                position: relative;
+                z-index: 2;
+                opacity: 0.9;
+            }
+
+            .feature-box .button {
+                background: transparent;
+                border: 1.5px solid #ffffff;
+                color: #ffffff;
+                padding: 10px 20px;
+                font-size: 13px;
+                font-weight: 400;
+                align-self: flex-start;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                border-radius: 5px;
+                display: inline-block;
+                position: relative;
+                z-index: 2;
+            }
+
+            .feature-box .button:hover {
+                background: rgba(255, 255, 255, 0.9);
+                color: #1C3247;
+                transform: translateY(-2px);
+            }
+
+            .feature-box:nth-child(2) .button:hover {
+                color: #0A84FF;
+            }
+
+            @media (max-width: 991px) {
+                .feature-box {
+                    padding: 30px;
+                    min-height: 200px;
+                }
+
+                .feature-box h4 {
+                    font-size: 20px;
+                    max-width: 100%;
+                }
+
+                .feature-box .button {
+                    padding: 8px 16px;
+                    font-size: 12px;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .feature-box h4 {
+                    font-size: 28px;
+                }
+            }
+
+            /* Icon Boxes */
+            .icon-box {
+                display: flex;
+                margin-bottom: 30px;
+            }
+
+            .icon-container {
+                margin-right: 20px;
+                flex-shrink: 0;
+            }
+
+            .icon-content h4 {
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            /* Causes Section */
+            .causes-section {
+                padding: 80px 0;
+                background-color: #f9f9f9;
+            }
+
+            .section-title-wrapper {
+                margin-bottom: 50px;
+            }
+
+            .section-subtitle {
+                font-size: 14px;
+                color: var(--primary-color);
+                margin-bottom: 10px;
+                display: block;
+                text-transform: uppercase;
+                position: relative;
+                padding-left: 50px;
+            }
+
+            .section-subtitle:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 40px;
+                height: 1px;
+                background-color: var(--primary-color);
+            }
+
+            .causes-grid {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -15px;
+            }
+
+            .cause-item {
+                width: calc(33.33% - 30px);
+                margin: 0 15px 30px;
+                background: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            }
+
+            .cause-image {
+                height: 200px;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .cause-content {
+                padding: 30px;
+            }
+
+            .cause-category {
+                display: inline-block;
+                padding: 5px 15px;
+                background: var(--primary-color);
+                border-radius: 30px;
+                font-size: 12px;
+                text-transform: uppercase;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+
+            .cause-title {
+                margin-top: 0;
+                margin-bottom: 15px;
+                font-size: 22px;
+            }
+
+            .cause-excerpt {
+                margin-bottom: 20px;
+            }
+
+            .progress-bar {
+                height: 6px;
+                background-color: #f1f1f1;
+                border-radius: 3px;
+                margin-bottom: 10px;
+                overflow: hidden;
+            }
+
+            .progress-bar-fill {
+                height: 100%;
+                background: linear-gradient(90deg, #34BDC6 0%, #34C688 100%);
+                border-radius: 3px;
+            }
+
+            .progress-stats {
+                display: flex;
+                justify-content: space-between;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+
+            /* Team Section */
+            .team-section {
+                padding: 80px 0;
+            }
+
+            .team-grid {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -15px;
+            }
+
+            .team-item {
+                width: calc(25% - 30px);
+                margin: 0 15px 30px;
+                position: relative;
+            }
+
+            .team-image {
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+
+            .team-image img {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease;
+            }
+
+            .team-item:hover .team-image img {
+                transform: scale(1.05);
+            }
+
+            .team-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(51,51,51,0.7);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .team-item:hover .team-overlay {
+                opacity: 1;
+            }
+
+            .team-socials {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .team-socials li {
+                margin: 0 5px;
+            }
+
+            .team-socials a {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                color: var(--secondary-color);
+                border-radius: 50%;
+                transition: all 0.3s ease;
+            }
+
+            .team-socials a:hover {
+                background: var(--primary-color);
+                color: white;
+            }
+
+            .team-content {
+                padding: 20px 0;
+            }
+
+            .team-title {
+                margin: 0 0 5px;
+                font-size: 20px;
+            }
+
+            .team-position {
+                color: var(--text-color);
+                font-size: 14px;
+            }
+
+            /* Testimonials */
+            .testimonials-section {
+                padding: 80px 0;
+                background-color: #f9f9f9;
+            }
+
+            .about-us-container {
+                display: flex;
+                background: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            }
+
+            .about-us-image {
+                width: 40%;
+                background-size: cover;
+                background-position: center;
+                background-image: url('images/kathakali_with_back_light_hero_ai.jpg');
+                border-radius: 10px 0 0 10px;
+                position: relative;
+            }
+
+            .about-us-image::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.3),
+                    rgba(0, 0, 0, 0.1)
+                );
+            }
+
+            .about-us-content {
+                width: 60%;
+                padding: 50px;
+                position: relative;
+            }
+
+            .about-us-text {
+                font-size: 16px;
+                line-height: 1.8;
+                color: var(--text-color);
+                margin-bottom: 20px;
+            }
+
+            .about-us-text p {
+                margin-bottom: 15px;
+            }
+
+            /* Footer */
+            .prefooter {
+                padding: 80px 0;
+                background-color: #2a373f;
+                color: white;
+            }
+
+            .footer-widget {
+                margin-bottom: 30px;
+            }
+
+            .footer-widget-title {
+                color: white;
+                margin-top: 0;
+                margin-bottom: 20px;
+                font-size: 20px;
+            }
+
+            .footer-logo {
+                margin-bottom: 20px;
+            }
+
+            .footer-socials {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+
+            .footer-socials li {
+                margin-right: 15px;
+            }
+
+            .footer-socials a {
+                color: white;
+                transition: color 0.3s ease;
+            }
+
+            .footer-socials a:hover {
+                color: var(--primary-color);
+            }
+
+            .footer-menu {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-menu li {
+                margin-bottom: 10px;
+            }
+
+            .footer-menu a {
+                color: white;
+                transition: color 0.3s ease;
+            }
+
+            .footer-menu a:hover {
+                color: var(--primary-color);
+            }
+
+            .footer {
+                padding: 20px 0;
+                background-color: #2a373f;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .footer-wrapper {
+                display: flex;
+                justify-content: space-between;
+                color: #bebebe;
+            }
+
+            .copyright a {
+                color: var(--primary-color);
+            }
+
+            .footer-bottom-menu {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-bottom-menu li {
+                margin-left: 20px;
+            }
+
+            .footer-bottom-menu a {
+                color: #bebebe;
+            }
+
+            .footer-bottom-menu a:hover {
+                color: var(--primary-color);
+            }
+
+            /* Ticker Style */
+            .ticker-section {
+                background-color: var(--primary-color);
+                overflow: hidden;
+                padding: 15px 0;
+            }
+
+            .ticker {
+                display: flex;
+                white-space: nowrap;
+                position: relative;
+            }
+
+            .ticker-item {
+                display: inline-block;
+                padding: 0 50px;
+                font-weight: 600;
+                color: var(--secondary-color);
+                font-size: 18px;
+            }
+
+            /* About Section */
+            .about-section {
+                padding: 80px 0;
+            }
+
+            .counter-box {
+                margin-bottom: 30px;
+            }
+
+            .counter {
+                font-size: 60px;
+                font-weight: 700;
+                font-family: var(--header-font);
+                color: var(--secondary-color);
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+
+            .counter-title {
+                font-size: 18px;
+                color: var(--text-color);
+            }
+
+            /* Events Section */
+            .events-section {
+                padding: 80px 0;
+            }
+
+            .event-item {
+                display: flex;
+                margin-bottom: 20px;
+                background: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            }
+
+            .event-image {
+                width: 100px;
+                flex-shrink: 0;
+            }
+
+            .event-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .event-content {
+                flex-grow: 1;
+                padding: 15px;
+            }
+
+            .event-title {
+                margin: 0 0 5px;
+                font-size: 18px;
+            }
+
+            .event-address {
+                font-size: 14px;
+                color: var(--text-color);
+            }
+
+            .event-date {
+                width: 100px;
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: #f9f9f9;
+                padding: 15px;
+                font-weight: 600;
+                color: var(--secondary-color);
+            }
+
+            .event-time {
+                font-size: 24px;
+                font-weight: 700;
+                color: var(--primary-color);
+            }
+
+            .event-time span {
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+
+            .main-event {
+                background: var(--primary-color);
+                padding: 40px;
+                height: 100%;
+                border-radius: 10px;
+            }
+
+            .main-event h4 {
+                margin: 15px 0;
+                color: var(--secondary-color);
+            }
+
+            /* Partners Section */
+            .partners-section {
+                padding: 80px 0;
+            }
+
+            .partners-grid {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .partner-item {
+                width: calc(16.66% - 20px);
+                margin: 0 10px;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .partner-item img {
+                max-width: 100%;
+                height: auto;
+                filter: grayscale(100%);
+                opacity: 0.6;
+                transition: all 0.3s ease;
+            }
+
+            .partner-item:hover img {
+                filter: grayscale(0);
+                opacity: 1;
+            }
+
+            /* CTA Section */
+            .cta-section {
+                padding: 80px 0;
+                background-color: #f9f9f9;
+            }
+
+            .cta-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                padding: 40px;
+                background: var(--primary-color);
+                border-radius: 10px;
+            }
+
+            .cta-content h3 {
+                color: var(--secondary-color);
+                margin-top: 0;
+            }
+
+            /* Back to Top Button */
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                background-color: var(--primary-color);
+                color: var(--secondary-color);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 99;
+            }
+
+            .back-to-top.visible {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            /* Hamburger Menu */
+            .hamburger-menu {
+                display: none;
+                cursor: pointer;
+                width: 30px;
+                height: 20px;
+                position: relative;
+                margin-left: auto;
+            }
+
+            .hamburger-menu span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background: white;
+                transition: all 0.3s ease;
+            }
+
+            .hamburger-menu span:nth-child(1) { top: 0; }
+            .hamburger-menu span:nth-child(2) { top: 9px; }
+            .hamburger-menu span:nth-child(3) { top: 18px; }
+
+            /* Mobile Menu */
+            .mobile-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 20px;
+                z-index: 999;
+            }
+
+            .mobile-menu.active {
+                display: block;
+            }
+
+            .mobile-menu-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .mobile-menu-list li {
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            .mobile-menu-list a {
+                color: white;
+                font-size: 18px;
+                font-weight: 500;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .mobile-menu-list a:hover {
+                color: var(--primary-color);
+            }
+
+            @media (max-width: 768px) {
+                .main-menu {
+                    display: none;
+                }
+
+                .hamburger-menu {
+                    display: block;
+                }
+
+                .header-transparent .header-inner,
+                .header-sticky .header-inner {
+                    justify-content: flex-end;
+                    padding: 15px 20px;
+                }
+            }
+
+            /* What We Do Section Styles */
+            .what-we-do {
+                padding: 80px 0;
+                background: #fff;
+            }
+
+            .section-label {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .section-label .dot {
+                width: 8px;
+                height: 8px;
+                background: #333;
+                border-radius: 50%;
+            }
+
+            .section-label span {
+                font-size: 18px;
+                color: #333;
+                font-weight: 500;
+            }
+
+            .section-heading {
+                font-size: 48px;
+                color: #333;
+                margin-bottom: 60px;
+                font-weight: 500;
+                line-height: 1.2;
+            }
+
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .service-item {
+                display: flex;
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .service-icon svg {
+                width: 100%;
+                height: auto;
+            }
+
+            .service-content h3 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 15px;
+                font-weight: 500;
+            }
+
+            .service-content p {
+                color: #666;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            /* Service Icons Colors */
+            .water-delivery svg {
+                fill: #0A84FF;
+            }
+
+            .build-repair svg {
+                fill: #FF9500;
+            }
+
+            .environment svg {
+                fill: #30D158;
+            }
+
+            .education svg {
+                fill: #FFD60A;
+            }
+
+            @media (max-width: 768px) {
+                .services-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .section-heading {
+                    font-size: 36px;
+                }
+            }
+        </style>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Epilogue:300,400,500,600,700|Sora:400,500,600,700&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class="header-transparent">
+            <div class="container">
+                <div class="header-inner">
+                    <nav>
+                        <ul class="main-menu">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#about-us">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-menu-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about-us">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-slide">
+                <div class="hero-background"></div>
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <img src="images/mcefee_logo_black_border_transparent.png" alt="McAfee Secured" class="hero-mcafee-logo">
+                        <div>
+                            <h1 class="hero-title">Connecting Cultures, Empowering Generations – <span style="color: var(--primary-color);">Celebrating Malayali Roots in the USA</span></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Boxes -->
+        <section class="feature-boxes">
+            <div class="feature-box">
+                <div>
+                    <h4>Story behind the foundation</h4>
+                    <div class="subtitle-text">Mission and Vision</div>
+                    <a href="#" class="link-text">Watch Video</a>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div>
+                    <h4>cultural events, educational programs, and community gatherings</h4>
+                    <a href="#" class="link-text">Upcoming events</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section class="what-we-do">
+            <div class="container">
+                <div class="section-label">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <span>What we do</span>
+                        </div>
+
+                <h2 class="section-heading">Various things we help in<br>whole world</h2>
+
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon water-delivery">
+                            <svg viewBox="0 0 39 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.5 48.9993C18.6469 48.9993 18.0375 48.2787 18.0375 47.438C18.0375 46.5973 18.7687 45.8767 19.5 45.8767C28.5187 45.8767 35.9531 38.5507 35.9531 29.6635C35.9531 22.8179 24.9844 9.60712 19.5 3.72231C14.0156 9.60712 3.04688 22.8179 3.04688 29.7836C3.04688 36.5091 7.06875 42.3939 13.4062 44.7958C14.1375 45.1561 14.625 45.9968 14.2594 46.7174C13.8938 47.438 13.0406 47.9184 12.3094 47.5581C4.875 44.7958 0 37.7101 0 29.7836C0 19.5753 17.6719 1.20025 18.4031 0.479665C19.0125 -0.120826 19.9875 -0.120826 20.5969 0.479665C21.3281 1.20025 39 19.5753 39 29.7836C39 40.4723 30.225 48.9993 19.5 48.9993Z"/>
+                                </svg>
+                            </div>
+                        <div class="service-content">
+                            <h3>Water delivery</h3>
+                                <p>Starry flounder sablefish yellowtail barracuda long-finned</p>
+                            </div>
+                        </div>
+
+                    <div class="service-item">
+                        <div class="service-icon build-repair">
+                            <svg viewBox="0 0 44 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M38.5567 41.9993H28.1237C27.3299 41.9993 26.6495 41.3396 26.6495 40.57C26.6495 39.8003 27.3299 39.1406 28.1237 39.1406H38.5567C39.9175 39.1406 41.0516 38.0412 41.0516 36.7218V15.1721C41.0516 14.2925 40.5979 13.5228 39.8041 13.0831L23.134 3.18777C22.3402 2.74798 21.3196 2.74798 20.4124 3.18777L3.74227 13.0831C2.94845 13.5228 2.49485 14.2925 2.49485 15.1721V36.8317C2.49485 38.1511 3.62887 39.2506 4.98969 39.2506H18.1443C19.2784 39.2506 20.1856 38.371 20.1856 37.2715V33.351C20.1856 32.5813 20.866 31.9216 21.6598 31.9216C22.4536 31.9216 23.134 32.5813 23.134 33.351V37.2715C23.134 39.9103 20.9794 41.9993 18.2577 41.9993H5.3299C2.38144 41.9993 0 39.6904 0 36.8317V15.1721C0 13.3029 0.907217 11.6537 2.60825 10.7742L19.2784 0.878865C20.9794 -0.110663 23.134 -0.110663 24.9485 0.878865L41.6186 10.7742C43.2062 11.7637 44.2268 13.4129 44.2268 15.1721V36.8317C44 39.6904 41.6186 41.9993 38.5567 41.9993Z"/>
+                                </svg>
+                            </div>
+                        <div class="service-content">
+                            <h3>Build and repair</h3>
+                                <p>Starry flounder sablefish yellowtail barracuda long-finned</p>
+                            </div>
+                        </div>
+
+                    <div class="service-item">
+                        <div class="service-icon environment">
+                            <svg viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9452 45.9997C19.178 45.9997 18.5205 45.3394 18.5205 44.569V36.6456H1.31502C0.767075 36.6456 0.328719 36.3155 0.109541 35.8753C-0.109637 35.4351 -0.109637 34.8848 0.21913 34.4446L11.5068 19.258H7.67118C7.12324 19.258 6.68488 18.9279 6.46571 18.4877C6.13694 18.1576 6.24653 17.6073 6.57529 17.1671L18.8493 0.549903C19.3972 -0.110384 20.4931 -0.110384 21.041 0.549903L33.4246 17.1671C33.7534 17.6073 33.7534 18.1576 33.5342 18.5978C33.315 19.0379 32.8767 19.3681 32.3287 19.3681H28.4931L39.7808 34.5547C40.1095 34.9949 40.1095 35.5451 39.8904 35.9853C39.6712 36.4255 39.2328 36.7556 38.6849 36.7556H26.8493C26.0821 36.7556 25.4246 36.0954 25.4246 35.325C25.4246 34.5547 26.0821 33.8944 26.8493 33.8944H35.9452L24.6575 18.8178C24.3287 18.3777 24.3287 17.8274 24.5479 17.3872C24.7671 16.947 25.2054 16.6169 25.7534 16.6169H29.589L19.9452 3.63124L10.4109 16.6169H14.2465C14.7945 16.6169 15.2328 16.947 15.452 17.3872C15.6712 17.8274 15.6712 18.3777 15.3424 18.8178L4.05475 33.8944H19.9452C20.7123 33.8944 21.3698 34.5547 21.3698 35.325V44.569C21.3698 45.3394 20.7123 45.9997 19.9452 45.9997Z"/>
+                                </svg>
+                            </div>
+                        <div class="service-content">
+                            <h3>Environment</h3>
+                                <p>Starry flounder sablefish yellowtail barracuda long-finned</p>
+                            </div>
+                        </div>
+
+                    <div class="service-item">
+                        <div class="service-icon education">
+                            <svg viewBox="0 0 38 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24.4625 43.0849H13.4187C10.6875 43.0849 8.55 40.8564 8.55 38.0088V36.3992C2.85 32.4373 -0.356252 25.7516 -1.59256e-06 18.6945C0.593748 8.6659 8.55 0.494474 18.05 -0.00076374C23.275 -0.248383 28.2625 1.73257 32.0625 5.44686C35.8625 9.16114 38 14.3611 38 19.8088C38 20.6754 37.2875 21.4183 36.4562 21.4183C35.625 21.4183 34.9125 20.6754 34.9125 19.8088C34.9125 15.2278 33.1312 10.8945 29.925 7.67543C26.7187 4.45638 22.5625 2.84686 18.05 3.09447C10.0937 3.4659 3.44375 10.3992 2.96875 18.8183C2.6125 25.1326 5.7 30.9516 10.8062 34.1707C11.2812 34.4183 11.5187 34.9135 11.5187 35.5326V38.0088C11.5187 39.123 12.35 39.9897 13.4187 39.9897H24.4625C25.5312 39.9897 26.3625 39.123 26.3625 38.0088V35.5326C26.3625 34.6659 27.075 33.923 27.9062 33.923C28.7375 33.923 29.45 34.6659 29.45 35.5326V38.0088C29.45 40.7326 27.1937 43.0849 24.4625 43.0849Z"/>
+                                </svg>
+                            </div>
+                        <div class="service-content">
+                            <h3>Education</h3>
+                                <p>Starry flounder sablefish yellowtail barracuda long-finned</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ticker/Banner Section -->
+        <section class="ticker-section">
+            <div class="ticker">
+                <div class="ticker-item">People need your help</div>
+                <div class="ticker-item">People need your help</div>
+                <div class="ticker-item">People need your help</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="section-title-wrapper">
+                            <span class="section-subtitle">About foundation</span>
+                            <h3>Hard times for the world & opportunities to help people in need</h3>
+                        </div>
+                        <p><strong>Halosaur duckbilled barracudina, goosefish gar pleco, chum salmon armoured catfish gudgeon sawfish whitefish orbicular batfish</strong></p>
+                        <p>Mummichog paradise fish! Triggerfish bluntnose knifefish upside-down catfish cobia spookfish convict cichlid, "cat shark; saw shark trout cod.</p>
+                        <a href="#" class="button">
+                            <span>Explore more</span>
+                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72029 1.27952L2.60273 1.27947L2.60273 -1.13769e-07L8.99994 5.3966e-05L9 6.39733L7.72055 6.39733L7.72029 1.27952Z"/>
+                                <path d="M0.90471 9L-3.95466e-08 8.09528L8.03093 0.0642592L8.93564 0.968978L0.90471 9Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="counter-box">
+                            <div class="counter">10k+</div>
+                            <div class="counter-title">People helped</div>
+                        </div>
+                        <div class="counter-box">
+                            <div class="counter">200+</div>
+                            <div class="counter-title">Closed projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Causes Section -->
+        <section class="causes-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            <div class="section-title-wrapper">
+                                <span class="section-subtitle">Causes</span>
+                                <h3>Some causes we have in Africa</h3>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 text-right">
+                            <a href="#" class="button">
+                                <span>More causes</span>
+                                <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72029 1.27952L2.60273 1.27947L2.60273 -1.13769e-07L8.99994 5.3966e-05L9 6.39733L7.72055 6.39733L7.72029 1.27952Z"/>
+                                    <path d="M0.90471 9L-3.95466e-08 8.09528L8.03093 0.0642592L8.93564 0.968978L0.90471 9Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="causes-grid">
+                    <!-- Cause Item 1 -->
+                    <div class="cause-item">
+                        <div class="cause-image" style="background-image: url('https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/cause_10-640x476.jpg');"></div>
+                        <div class="cause-content">
+                            <span class="cause-category">Health</span>
+                            <h5 class="cause-title">Water cleaning in Uganda</h5>
+                            <p class="cause-excerpt">Pink salmon cherry salmon combtail gourami frigate mackerel snake.</p>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: 100%;"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>$1.03 million raised</span>
+                                <span>$100,000 goal</span>
+                            </div>
+                            <a href="#" class="button">Donate</a>
+                        </div>
+                    </div>
+
+                    <!-- Cause Item 2 -->
+                    <div class="cause-item">
+                        <div class="cause-image" style="background-image: url('https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/cause_11-640x476.jpg');"></div>
+                        <div class="cause-content">
+                            <span class="cause-category">Medicine</span>
+                            <h5 class="cause-title">Health medicine for children</h5>
+                            <p class="cause-excerpt">Michog paradise fish! Triggerfish bango guppy opah sunfish bluntnose</p>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: 65%;"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>$65,230 raised</span>
+                                <span>$100,000 goal</span>
+                            </div>
+                            <a href="#" class="button">Donate</a>
+                        </div>
+                    </div>
+
+                    <!-- Cause Item 3 -->
+                    <div class="cause-item">
+                        <div class="cause-image" style="background-image: url('https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/cause_12-640x476.jpg');"></div>
+                        <div class="cause-content">
+                            <span class="cause-category">Education</span>
+                            <h5 class="cause-title">We build school</h5>
+                            <p class="cause-excerpt">Cobia spookfish convict cichlid cat shark saw shark trout cod</p>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: 45%;"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>$45,246 raised</span>
+                                <span>$100,000 goal</span>
+                            </div>
+                            <a href="#" class="button">Donate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="section-title-wrapper">
+                            <span class="section-subtitle">Team</span>
+                            <h3>Meet our the best volunteers team</h3>
+                        </div>
+                        <div class="counter-box">
+                            <div class="counter">500+</div>
+                            <div class="counter-title">Team members</div>
+                        </div>
+                        <a href="#" class="button">
+                            <span>Explore more</span>
+                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72029 1.27952L2.60273 1.27947L2.60273 -1.13769e-07L8.99994 5.3966e-05L9 6.39733L7.72055 6.39733L7.72029 1.27952Z"/>
+                                <path d="M0.90471 9L-3.95466e-08 8.09528L8.03093 0.0642592L8.93564 0.968978L0.90471 9Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-item">
+                        <div class="team-image">
+                            <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/team_1-305x418.jpg" alt="Team Member">
+                            <div class="team-overlay">
+                                <ul class="team-socials">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5 class="team-title">Ivan Schevcenko</h5>
+                            <div class="team-position">Volunteer</div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="team-item">
+                        <div class="team-image">
+                            <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/team_2-305x418.jpg" alt="Team Member">
+                            <div class="team-overlay">
+                                <ul class="team-socials">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5 class="team-title">Denis Klopotenko</h5>
+                            <div class="team-position">Volunteer</div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="team-item">
+                        <div class="team-image">
+                            <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/team_3-305x418.jpg" alt="Team Member">
+                            <div class="team-overlay">
+                                <ul class="team-socials">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5 class="team-title">Dmytro Savchuk</h5>
+                            <div class="team-position">Head Volunteer</div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="team-item">
+                        <div class="team-image">
+                            <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/team_4-305x418.jpg" alt="Team Member">
+                            <div class="team-overlay">
+                                <ul class="team-socials">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5 class="team-title">Serhiy Demchuk</h5>
+                            <div class="team-position">Volunteer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section (Previously Testimonials) -->
+        <section class="testimonials-section" id="about-us">
+            <div class="container">
+                <div class="about-us-container">
+                    <div class="about-us-image"></div>
+                    <div class="about-us-content">
+                        <div class="section-title-wrapper">
+                            <span class="section-subtitle">About Us</span>
+                            <h3>The Malayali Cultural Exchange Foundation</h3>
+                        </div>
+                        <div class="about-us-text">
+                            <p>The Malayali Cultural Exchange Foundation for Education and Events is a vibrant, community-driven organization based in New Jersey, USA, dedicated to reviving real Malayali culture, empowering the next generation through education, and offering a nostalgic sense of home to our community. Our mission is to preserve and promote the rich cultural heritage of Kerala while fostering a deeper connection among Malayalis in the USA, creating a sense of belonging and unity.</p>
+
+                            <p>We focus on providing quality events that go beyond face-value interactions, offering genuine cultural experiences and values. Through educational programs, cultural events, and community-building activities, we aim to engage and inspire the new generation. Whether it's learning the Malayalam language, participating in Kerala's traditional festivals, or understanding the deeper meanings of our customs, we ensure that our initiatives go beyond surface-level celebrations.</p>
+
+                            <p>At the heart of our foundation is the belief in the power of cultural exchange. We strive to create opportunities for our community to reconnect with their roots while also sharing the beauty of Kerala with others. Our events are specifically designed to attract and engage young people, helping them build a deeper appreciation for their heritage, while also offering a sense of nostalgia and connection to those already established in the USA.</p>
+
+                            <p>The Malayali Cultural Exchange Foundation for Education and Events serves as a home away from home, offering a place to celebrate, educate, and embrace the vibrant spirit of Kerala. Join us in our mission to nurture the next generation of Malayalis and continue the traditions that define our culture, fostering a stronger, more connected community in the USA.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <div class="section-title-wrapper">
+                            <span class="section-subtitle">Events</span>
+                            <h3>Exciting events & announcements</h3>
+                        </div>
+
+                        <!-- Event Item 1 -->
+                        <div class="event-item">
+                            <div class="event-image">
+                                <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/event_9-255x155.jpg" alt="Event">
+                            </div>
+                            <div class="event-content">
+                                <h5 class="event-title">Shaman stories & celebrations</h5>
+                                <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
+                            </div>
+                            <div class="event-date">
+                                <div class="event-time">8 <span>pm</span></div>
+                                <div>Jan. 08 / 26</div>
+                            </div>
+                        </div>
+
+                        <!-- Event Item 2 -->
+                        <div class="event-item">
+                            <div class="event-image">
+                                <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/event_8-255x155.jpg" alt="Event">
+                            </div>
+                            <div class="event-content">
+                                <h5 class="event-title">Paint games on the streets</h5>
+                                <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
+                            </div>
+                            <div class="event-date">
+                                <div class="event-time">10 <span>pm</span></div>
+                                <div>Jan. 10 / 26</div>
+                            </div>
+                        </div>
+
+                        <!-- Event Item 3 -->
+                        <div class="event-item">
+                            <div class="event-image">
+                                <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/event_7-255x155.jpeg" alt="Event">
+                            </div>
+                            <div class="event-content">
+                                <h5 class="event-title">African history of one tribe</h5>
+                                <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
+                            </div>
+                            <div class="event-date">
+                                <div class="event-time">6 <span>pm</span></div>
+                                <div>Jan. 06 / 26</div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="button">
+                            <span>See all events</span>
+                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72029 1.27952L2.60273 1.27947L2.60273 -1.13769e-07L8.99994 5.3966e-05L9 6.39733L7.72055 6.39733L7.72029 1.27952Z"/>
+                                <path d="M0.90471 9L-3.95466e-08 8.09528L8.03093 0.0642592L8.93564 0.968978L0.90471 9Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="main-event">
+                            <span>Main event</span>
+                            <h4>Night with<br>African culture</h4>
+                            <p>Starry flounder sablefish<br>yellowtail barracuda long-finned</p>
+                            <p>Jan. 15 / 22 - 10pm</p>
+                            <p>Manhattan Club 350 5th Ave, New York, NY</p>
+                            <a href="#" class="button">
+                                <span>Explore more</span>
+                                <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72029 1.27952L2.60273 1.27947L2.60273 -1.13769e-07L8.99994 5.3966e-05L9 6.39733L7.72055 6.39733L7.72029 1.27952Z"/>
+                                    <path d="M0.90471 9L-3.95466e-08 8.09528L8.03093 0.0642592L8.93564 0.968978L0.90471 9Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners-section">
+            <div class="container">
+                <div class="partners-grid">
+                    <div class="partner-item">
+                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/logo_1.png" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/logo_2.png" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/logo_3.png" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/logo_4.png" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/logo_5.png" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/logo_6.png" alt="Partner">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/children_photo.jpg" alt="Children">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="cta-content">
+                            <h3>The long journey to end poverty begins with a child.</h3>
+                            <a href="#" class="button">Donate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="prefooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-3">
+                            <div class="footer-widget">
+                                <div class="footer-logo">
+                                    <img src="https://demo.artureanec.com/themes/philantrop/wp-content/themes/philantrop/img/logo_white.png" alt="Footer Logo" width="134" height="70">
+                                </div>
+                                <h6 class="footer-widget-title">Follow us</h6>
+                                <ul class="footer-socials">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="footer-widget">
+                                <h6 class="footer-widget-title">Contacts</h6>
+                                <div class="footer-contact">
+                                    <p>Agencium Ltd, 31 Ashcombe,<br>London NW5 1QU, UK</p>
+                                    <p><a href="tel:+13685678954">+1 (368) 567 89 54</a><br>
+                                    <a href="tel:+8003508431">+ 800 350 84 31</a></p>
+                                    <p><a href="mailto:support@philantrop.com">support@philantrop.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="footer-widget">
+                                <h6 class="footer-widget-title">Main menu</h6>
+                                <ul class="footer-menu">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Pages</a></li>
+                                    <li><a href="#">Portfolio</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Contacts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="footer-widget">
+                                <h6 class="footer-widget-title">Donors info</h6>
+                                <ul class="footer-menu">
+                                    <li><a href="#">Give or Redeem Gift Cards</a></li>
+                                    <li><a href="#">Donate in Honor</a></li>
+                                    <li><a href="#">Project of the Month Club</a></li>
+                                    <li><a href="#">Start a Fundraiser</a></li>
+                                    <li><a href="#">Donor Resources</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="footer-wrapper">
+                        <div class="copyright">
+                            © <a href="#">Philantrop</a> 2024. All Rights Reserved by Artureanec
+                        </div>
+                        <ul class="footer-bottom-menu">
+                            <li><a href="#">Terms of use Privacy</a></li>
+                            <li><a href="#">Environmental Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+
+        <!-- JavaScript -->
+        <script>
+            // Improved Header Behavior
+            const header = document.querySelector('header');
+            let lastScroll = 0;
+            let isScrolling = false;
+
+            function updateHeader() {
+                const currentScroll = window.pageYOffset;
+                const scrollingDown = currentScroll > lastScroll;
+
+                header.classList.remove('header-transparent', 'header-sticky');
+
+                if (currentScroll <= 0) {
+                    header.classList.add('header-transparent');
+                } else {
+                    header.classList.add('header-sticky');
+                }
+
+                lastScroll = currentScroll;
+            }
+
+            // Throttled scroll event handler
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(() => {
+                        updateHeader();
+                    });
+                    isScrolling = true;
+                }
+
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+
+                scrollTimeout = setTimeout(() => {
+                    updateHeader();
+                }, 100);
+            });
+
+            // Mobile Menu Toggle
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            hamburgerMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburgerMenu.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                }
+            });
+
+            // Initial calls
+            updateHeader();
+
+            // Handle page load and resize
+            window.addEventListener('load', updateHeader);
+            window.addEventListener('resize', updateHeader);
+
+            // Simple Ticker Animation
+            function startTicker() {
+                const ticker = document.querySelector('.ticker');
+                if (!ticker) return;
+
+                const tickerWidth = ticker.offsetWidth;
+                const tickerItems = ticker.querySelectorAll('.ticker-item');
+
+                let position = 0;
+
+                setInterval(() => {
+                    position -= 1;
+                    ticker.style.transform = `translateX(${position}px)`;
+
+                    if (position <= -tickerWidth) {
+                        position = 0;
+                        ticker.style.transform = `translateX(${position}px)`;
+                    }
+                }, 20);
+            }
+
+            // Start ticker on load
+            startTicker();
+
+            // Add smooth scroll handling
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            const headerOffset = 80;
+                            const elementPosition = target.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
