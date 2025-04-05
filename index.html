@@ -312,10 +312,56 @@
                 background-image: url('images/kathakali_with_back_light_hero_ai.jpg');
                 background-size: cover;
                 background-position: center;
-                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
-                border-left: 50px solid;
-                border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)) 1 100%;
-                opacity: 0.9;
+                overflow: hidden;
+                mask-image: radial-gradient(circle at 100% 50%,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 1) 60%,
+                    rgba(0, 0, 0, 0) 100%);
+                -webkit-mask-image: radial-gradient(circle at 100% 50%,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 1) 60%,
+                    rgba(0, 0, 0, 0) 100%);
+            }
+
+            .hero-background::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0) 60%,
+                    rgba(0, 0, 0, 0.1) 80%,
+                    rgba(0, 0, 0, 0.3) 100%
+                );
+                z-index: 1;
+            }
+
+            .hero-background::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.2) 0%,
+                    rgba(0, 0, 0, 0) 50%,
+                    rgba(0, 0, 0, 0.2) 100%
+                );
+                z-index: 2;
+            }
+
+            .hero-background img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+                z-index: 0;
             }
 
             /* Gradient overlay */
@@ -327,9 +373,9 @@
                 bottom: 0;
                 background: linear-gradient(
                     90deg,
-                    rgba(0, 0, 0, 0.9) 0%,
-                    rgba(0, 0, 0, 0.7) 50%,
-                    rgba(0, 0, 0, 0.5) 100%
+                    rgba(0, 0, 0, 0.7) 0%,
+                    rgba(0, 0, 0, 0.5) 50%,
+                    rgba(0, 0, 0, 0.3) 100%
                 );
                 z-index: 1;
                 padding-top: 20px;
@@ -399,12 +445,12 @@
 
             .feature-box {
                 flex: 1;
-                padding: 40px;
+                padding: 25px;
                 position: relative;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                min-height: 250px;
+                min-height: 120px;
                 background-size: cover;
                 background-position: center;
                 overflow: hidden;
@@ -426,11 +472,11 @@
             }
 
             .feature-box:nth-child(1) {
-                background-image: url('images/charity_hands.jpeg');
+                background-image: url('images/deepam_chirad.jpeg');
             }
 
             .feature-box:nth-child(2) {
-                background-image: url('images/spark_kerala_event_2025.jpeg');
+                background-image: url('images/lady_dance.jpeg');
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -469,8 +515,8 @@
             }
 
             .feature-box:nth-child(2):hover::after {
-                width: 120%;
-                height: 120%;
+                width: 175%;
+                height: 175%;
                 opacity: 1;
                 backdrop-filter: blur(5px);
                 background-color: rgba(0, 0, 0, 0.4);
@@ -494,19 +540,12 @@
                 transition: opacity 0.3s ease;
             }
 
-            @media (max-width: 768px) {
-                .feature-box:nth-child(2):hover::after {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
             .feature-box h4 {
                 color: white;
-                font-size: 24px;
-                line-height: 1.4;
+                font-size: 20px;
+                line-height: 1.3;
                 font-weight: 300;
-                margin: 0 0 20px 0;
+                margin: 0 0 15px 0;
                 max-width: 90%;
                 position: relative;
                 z-index: 2;
@@ -604,6 +643,17 @@
             @media (max-width: 767px) {
                 .feature-box h4 {
                     font-size: 28px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .feature-box {
+                    min-height: 100px;
+                    padding: 20px;
+                }
+
+                .feature-box h4 {
+                    font-size: 18px;
                 }
             }
 
@@ -868,9 +918,9 @@
                 margin-bottom: 15px;
             }
 
-            /* Footer */
+            /* Footer Styles */
             .prefooter {
-                padding: 80px 0;
+                padding: 60px 0;
                 background-color: #2a373f;
                 color: white;
             }
@@ -882,12 +932,25 @@
             .footer-widget-title {
                 color: white;
                 margin-top: 0;
-                margin-bottom: 20px;
+                margin-bottom: 25px;
                 font-size: 20px;
+                position: relative;
             }
 
             .footer-logo {
-                margin-bottom: 20px;
+                margin-bottom: 25px;
+                text-align: left;
+            }
+
+            .footer-logo img {
+                max-width: 180px;
+                height: auto;
+                opacity: 0.9;
+                transition: opacity 0.3s ease;
+            }
+
+            .footer-logo img:hover {
+                opacity: 1;
             }
 
             .footer-socials {
@@ -895,38 +958,125 @@
                 list-style: none;
                 padding: 0;
                 margin: 20px 0;
-            }
-
-            .footer-socials li {
-                margin-right: 15px;
+                flex-wrap: wrap;
+                gap: 15px;
             }
 
             .footer-socials a {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
                 color: white;
-                transition: color 0.3s ease;
+                transition: all 0.3s ease;
             }
 
             .footer-socials a:hover {
+                background: var(--primary-color);
+                color: var(--secondary-color);
+                transform: translateY(-3px);
+            }
+
+            .footer-contact p {
+                margin-bottom: 15px;
+                font-size: 16px;
+                line-height: 1.6;
+                opacity: 0.9;
+            }
+
+            .footer-contact a {
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                opacity: 0.9;
+            }
+
+            .footer-contact a:hover {
                 color: var(--primary-color);
+                opacity: 1;
             }
 
             .footer-menu {
                 list-style: none;
                 padding: 0;
                 margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
             }
 
             .footer-menu li {
-                margin-bottom: 10px;
+                margin-bottom: 0;
             }
 
             .footer-menu a {
                 color: white;
-                transition: color 0.3s ease;
+                text-decoration: none;
+                font-size: 16px;
+                opacity: 0.9;
+                transition: all 0.3s ease;
+                position: relative;
+                white-space: nowrap;
+            }
+
+            .footer-menu a:after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: var(--primary-color);
+                transition: width 0.3s ease;
             }
 
             .footer-menu a:hover {
                 color: var(--primary-color);
+                opacity: 1;
+            }
+
+            .footer-menu a:hover:after {
+                width: 100%;
+            }
+
+            @media (max-width: 991px) {
+                .footer-menu {
+                    gap: 20px;
+                    justify-content: flex-start;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .footer-menu {
+                    flex-direction: column;
+                    gap: 15px;
+                    align-items: center;
+                }
+
+                .footer-menu li {
+                    margin-bottom: 10px;
+                }
+
+                .footer-menu a {
+                    font-size: 15px;
+                }
+
+                .footer-menu a:after {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .footer-menu {
+                    gap: 12px;
+                }
+
+                .footer-menu a {
+                    font-size: 14px;
+                }
             }
 
             .footer {
@@ -937,31 +1087,117 @@
 
             .footer-wrapper {
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
+                align-items: center;
                 color: #bebebe;
+            }
+
+            .copyright {
+                text-align: center;
+                font-size: 14px;
+                opacity: 0.8;
             }
 
             .copyright a {
                 color: var(--primary-color);
+                text-decoration: none;
+                transition: color 0.3s ease;
             }
 
-            .footer-bottom-menu {
-                display: flex;
-                list-style: none;
-                padding: 0;
-                margin: 0;
+            .copyright a:hover {
+                color: white;
             }
 
-            .footer-bottom-menu li {
-                margin-left: 20px;
+            /* Responsive Footer Styles */
+            @media (max-width: 991px) {
+                .prefooter {
+                    padding: 50px 0;
+                }
+
+                .footer-widget {
+                    margin-bottom: 40px;
+                }
+
+                .col-md-4 {
+                    width: 50%;
+                }
+
+                .footer-logo {
+                    text-align: left;
+                }
             }
 
-            .footer-bottom-menu a {
-                color: #bebebe;
+            @media (max-width: 767px) {
+                .prefooter {
+                    padding: 40px 0;
+                }
+
+                .col-md-4 {
+                    width: 100%;
+                }
+
+                .footer-widget {
+                    margin-bottom: 30px;
+                    text-align: center;
+                }
+
+                .footer-logo {
+                    text-align: center;
+                }
+
+                .footer-socials {
+                    justify-content: center;
+                }
+
+                .footer-menu {
+                    text-align: center;
+                }
+
+                .footer-menu a {
+                    padding-left: 0;
+                }
+
+                .footer-menu a:hover {
+                    padding-left: 0;
+                }
+
+                .footer-menu a:before {
+                    display: none;
+                }
+
+                .footer-contact {
+                    text-align: center;
+                }
             }
 
-            .footer-bottom-menu a:hover {
-                color: var(--primary-color);
+            @media (max-width: 480px) {
+                .prefooter {
+                    padding: 30px 0;
+                }
+
+                .footer-widget-title {
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
+
+                .footer-logo img {
+                    max-width: 150px;
+                }
+
+                .footer-socials a {
+                    width: 35px;
+                    height: 35px;
+                }
+
+                .footer-menu a,
+                .footer-contact p,
+                .footer-contact a {
+                    font-size: 14px;
+                }
+
+                .copyright {
+                    font-size: 13px;
+                }
             }
 
             /* Ticker Style */
@@ -1462,6 +1698,29 @@
                     justify-content: center;
                 }
             }
+
+            @media (max-width: 991px) {
+                .hero-background {
+                    width: 50%;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .hero-background {
+                    width: 100%;
+                    height: 50%;
+                    top: 0;
+                    right: 0;
+                    mask-image: radial-gradient(circle at 100% 0%,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 1) 60%,
+                        rgba(0, 0, 0, 0) 100%);
+                    -webkit-mask-image: radial-gradient(circle at 100% 0%,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 1) 60%,
+                        rgba(0, 0, 0, 0) 100%);
+                }
+            }
         </style>
 
         <!-- Google Fonts -->
@@ -1480,7 +1739,6 @@
                         <ul class="main-menu">
                             <li><a href="#">Home</a></li>
                             <li><a href="#about-us">About</a></li>
-                            <li><a href="#">Services</a></li>
                             <li><a href="events.html">Events</a></li>
                             <li><a href="#team-section">Team</a></li>
                             <li><a href="#contact">Contact</a></li>
@@ -1500,7 +1758,6 @@
             <ul class="mobile-menu-list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#about-us">About</a></li>
-                <li><a href="#">Services</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="#team-section">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1749,7 +2006,7 @@
                     <!-- Location -->
                     <div class="contact-item">
                         <h6>Location</h6>
-                        <p>NJ Malayalees Foundation<br>New Jersey, USA</p>
+                        <p>MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events<br>New Jersey, USA</p>
                     </div>
 
                     <!-- Phone -->
@@ -1800,10 +2057,10 @@
                         <!-- Event Item 1 -->
                         <div class="event-item">
                             <div class="event-image">
-                                <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/event_9-255x155.jpg" alt="Event">
+                                <img src="images/joint_mudra.jpeg" alt="Joint Mudra Performance">
                             </div>
                             <div class="event-content">
-                                <h5 class="event-title">Shaman stories & celebrations</h5>
+                                <h5 class="event-title">Kerala Classical Dance Performance</h5>
                                 <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
                             </div>
                             <div class="event-date">
@@ -1815,10 +2072,10 @@
                         <!-- Event Item 2 -->
                         <div class="event-item">
                             <div class="event-image">
-                                <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/event_8-255x155.jpg" alt="Event">
+                                <img src="images/kalari_jump.jpeg" alt="Kalaripayattu Performance">
                             </div>
                             <div class="event-content">
-                                <h5 class="event-title">Paint games on the streets</h5>
+                                <h5 class="event-title">Kalaripayattu Demonstration</h5>
                                 <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
                             </div>
                             <div class="event-date">
@@ -1830,10 +2087,10 @@
                         <!-- Event Item 3 -->
                         <div class="event-item">
                             <div class="event-image">
-                                <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/event_7-255x155.jpeg" alt="Event">
+                                <img src="images/lady_dance.jpeg" alt="Classical Dance Performance">
                             </div>
                             <div class="event-content">
-                                <h5 class="event-title">African history of one tribe</h5>
+                                <h5 class="event-title">Kerala Cultural Heritage Showcase</h5>
                                 <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
                             </div>
                             <div class="event-date">
@@ -1842,7 +2099,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="button">
+                        <a href="events.html" class="button" style="margin-bottom: 30px;">
                             <span>See all events</span>
                             <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72029 1.27952L2.60273 1.27947L2.60273 -1.13769e-07L8.99994 5.3966e-05L9 6.39733L7.72055 6.39733L7.72029 1.27952Z"/>
@@ -1853,11 +2110,11 @@
                     <div class="col-12 col-md-4">
                         <div class="main-event">
                             <span>Main event</span>
-                            <h4>Night with<br>African culture</h4>
-                            <p>Starry flounder sablefish<br>yellowtail barracuda long-finned</p>
-                            <p>Jan. 15 / 22 - 10pm</p>
+                            <h4>Night with<br>Kerala culture</h4>
+                            <p>Experience the rich heritage<br>of God's Own Country</p>
+                            <p>Jan. 15 / 26 - 10pm</p>
                             <p>Manhattan Club 350 5th Ave, New York, NY</p>
-                            <a href="#" class="button">
+                            <a href="events.html" class="button">
                                 <span>Explore more</span>
                                 <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72029 1.27952L2.60273 1.27947L2.60273 -1.13769e-07L8.99994 5.3966e-05L9 6.39733L7.72055 6.39733L7.72029 1.27952Z"/>
@@ -1889,9 +2146,6 @@
                     <div class="partner-item">
                         <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/logo_5.png" alt="Partner">
                     </div>
-                    <div class="partner-item">
-                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/logo_6.png" alt="Partner">
-                    </div>
                 </div>
             </div>
         </section>
@@ -1918,10 +2172,10 @@
             <div class="prefooter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-4">
                             <div class="footer-widget">
                                 <div class="footer-logo">
-                                    <img src="https://demo.artureanec.com/themes/philantrop/wp-content/themes/philantrop/img/logo_white.png" alt="Footer Logo" width="134" height="70">
+                                    <img src="images/mcefee_logo_black_border_transparent.png" alt="Footer Logo">
                                 </div>
                                 <h6 class="footer-widget-title">Follow us</h6>
                                 <ul class="footer-socials">
@@ -1932,38 +2186,26 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-4">
                             <div class="footer-widget">
                                 <h6 class="footer-widget-title">Contacts</h6>
                                 <div class="footer-contact">
-                                    <p>Agencium Ltd, 31 Ashcombe,<br>London NW5 1QU, UK</p>
+                                    <p>MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events<br>New Jersey, USA</p>
                                     <p><a href="tel:+13685678954">+1 (368) 567 89 54</a><br>
                                     <a href="tel:+8003508431">+ 800 350 84 31</a></p>
-                                    <p><a href="mailto:support@philantrop.com">support@philantrop.com</a></p>
+                                    <p><a href="mailto:contact@njmalayalees.org">contact@njmalayalees.org</a></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-4">
                             <div class="footer-widget">
                                 <h6 class="footer-widget-title">Main menu</h6>
                                 <ul class="footer-menu">
                                     <li><a href="#">Home</a></li>
-                                    <li><a href="#">Pages</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contacts</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <div class="footer-widget">
-                                <h6 class="footer-widget-title">Donors info</h6>
-                                <ul class="footer-menu">
-                                    <li><a href="#">Give or Redeem Gift Cards</a></li>
-                                    <li><a href="#">Donate in Honor</a></li>
-                                    <li><a href="#">Project of the Month Club</a></li>
-                                    <li><a href="#">Start a Fundraiser</a></li>
-                                    <li><a href="#">Donor Resources</a></li>
+                                    <li><a href="#about-us">About</a></li>
+                                    <li><a href="events.html">Events</a></li>
+                                    <li><a href="#team-section">Team</a></li>
+                                    <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1974,12 +2216,8 @@
                 <div class="container">
                     <div class="footer-wrapper">
                         <div class="copyright">
-                            © <a href="#">Philantrop</a> 2024. All Rights Reserved by Artureanec
+                            © <span id="currentYear"></span> <a href="#">MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events</a>
                         </div>
-                        <ul class="footer-bottom-menu">
-                            <li><a href="#">Terms of use Privacy</a></li>
-                            <li><a href="#">Environmental Policy</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -1992,6 +2230,9 @@
 
         <!-- JavaScript -->
         <script>
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
             // Improved Header Behavior
             const header = document.querySelector('header');
             let lastScroll = 0;
