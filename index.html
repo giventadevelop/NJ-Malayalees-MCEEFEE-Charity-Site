@@ -312,10 +312,56 @@
                 background-image: url('images/kathakali_with_back_light_hero_ai.jpg');
                 background-size: cover;
                 background-position: center;
-                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
-                border-left: 50px solid;
-                border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)) 1 100%;
-                opacity: 0.9;
+                overflow: hidden;
+                mask-image: radial-gradient(circle at 100% 50%,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 1) 60%,
+                    rgba(0, 0, 0, 0) 100%);
+                -webkit-mask-image: radial-gradient(circle at 100% 50%,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 1) 60%,
+                    rgba(0, 0, 0, 0) 100%);
+            }
+
+            .hero-background::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0) 60%,
+                    rgba(0, 0, 0, 0.1) 80%,
+                    rgba(0, 0, 0, 0.3) 100%
+                );
+                z-index: 1;
+            }
+
+            .hero-background::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.2) 0%,
+                    rgba(0, 0, 0, 0) 50%,
+                    rgba(0, 0, 0, 0.2) 100%
+                );
+                z-index: 2;
+            }
+
+            .hero-background img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+                z-index: 0;
             }
 
             /* Gradient overlay */
@@ -327,9 +373,9 @@
                 bottom: 0;
                 background: linear-gradient(
                     90deg,
-                    rgba(0, 0, 0, 0.9) 0%,
-                    rgba(0, 0, 0, 0.7) 50%,
-                    rgba(0, 0, 0, 0.5) 100%
+                    rgba(0, 0, 0, 0.7) 0%,
+                    rgba(0, 0, 0, 0.5) 50%,
+                    rgba(0, 0, 0, 0.3) 100%
                 );
                 z-index: 1;
                 padding-top: 20px;
@@ -1652,6 +1698,29 @@
                     justify-content: center;
                 }
             }
+
+            @media (max-width: 991px) {
+                .hero-background {
+                    width: 50%;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .hero-background {
+                    width: 100%;
+                    height: 50%;
+                    top: 0;
+                    right: 0;
+                    mask-image: radial-gradient(circle at 100% 0%,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 1) 60%,
+                        rgba(0, 0, 0, 0) 100%);
+                    -webkit-mask-image: radial-gradient(circle at 100% 0%,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 1) 60%,
+                        rgba(0, 0, 0, 0) 100%);
+                }
+            }
         </style>
 
         <!-- Google Fonts -->
@@ -1937,7 +2006,7 @@
                     <!-- Location -->
                     <div class="contact-item">
                         <h6>Location</h6>
-                        <p>NJ Malayalees Foundation<br>New Jersey, USA</p>
+                        <p>MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events<br>New Jersey, USA</p>
                     </div>
 
                     <!-- Phone -->
@@ -2121,7 +2190,7 @@
                             <div class="footer-widget">
                                 <h6 class="footer-widget-title">Contacts</h6>
                                 <div class="footer-contact">
-                                    <p>NJ Malayalees Foundation<br>New Jersey, USA</p>
+                                    <p>MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events<br>New Jersey, USA</p>
                                     <p><a href="tel:+13685678954">+1 (368) 567 89 54</a><br>
                                     <a href="tel:+8003508431">+ 800 350 84 31</a></p>
                                     <p><a href="mailto:contact@njmalayalees.org">contact@njmalayalees.org</a></p>
@@ -2147,7 +2216,7 @@
                 <div class="container">
                     <div class="footer-wrapper">
                         <div class="copyright">
-                            © <span id="currentYear"></span> <a href="#">NJ Malayalees Foundation</a>
+                            © <span id="currentYear"></span> <a href="#">MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events</a>
                         </div>
                     </div>
                 </div>
