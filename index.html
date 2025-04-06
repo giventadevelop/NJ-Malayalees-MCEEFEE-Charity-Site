@@ -128,87 +128,339 @@
                 left: 0;
                 width: 100%;
                 z-index: 1000;
-                transition: all 0.3s ease;
-                background: rgba(0, 0, 0, 1);
-                border-bottom: none;
+                background: rgba(0, 0, 0, 0.95);
             }
 
-            .header-sticky {
+            .header-transparent .header-inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 15px 20px;
+            }
+
+            .header-transparent .logo {
+                width: 120px;
+                height: auto;
+            }
+
+            .header-transparent .logo img {
+                width: 100%;
+                height: auto;
+            }
+
+            /* Navigation and Hamburger Menu */
+            nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .hamburger-menu {
+                display: none;
+                width: 30px;
+                height: 24px;
+                position: relative;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                padding: 0;
+                margin-right: 20px;
+                z-index: 1001;
+            }
+
+            .hamburger-menu span {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: white;
+                border-radius: 2px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: .25s ease-in-out;
+            }
+
+            .hamburger-menu span:nth-child(1) { top: 0; }
+            .hamburger-menu span:nth-child(2) { top: 10px; }
+            .hamburger-menu span:nth-child(3) { top: 20px; }
+
+            .hamburger-menu.active span:nth-child(1) {
+                top: 10px;
+                transform: rotate(135deg);
+            }
+
+            .hamburger-menu.active span:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+            }
+
+            .hamburger-menu.active span:nth-child(3) {
+                top: 10px;
+                transform: rotate(-135deg);
+            }
+
+            /* Mobile Menu */
+            .mobile-menu {
+                display: none;
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
-                background: rgba(0, 0, 0, 1);
-                box-shadow: none;
-                animation: slideDown 0.3s ease-in-out;
-                border-bottom: none;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.95);
+                padding-top: 80px;
+                z-index: 999;
             }
 
-            .header-transparent .header-inner,
-            .header-sticky .header-inner {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                padding: 15px 20px;
-                transition: all 0.3s ease;
-            }
-
-            .header-transparent .logo,
-            .header-sticky .logo {
-                width: 150px;
-                height: 60px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                transition: all 0.3s ease;
-            }
-
-            .header-transparent .button,
-            .header-sticky .button {
-                background: var(--primary-color);
-                border: none;
-                color: var(--secondary-color);
-                padding: 12px 28px;
-                font-size: 16px;
-                font-weight: 500;
-                border-radius: 5px;
-                transition: all 0.3s ease;
-            }
-
-            .header-transparent .main-menu > li > a {
-                font-family: var(--body-font);
-                font-size: 15px;
-                line-height: 27px;
-                font-weight: 300;
-                color: rgba(255, 255, 255, 0.9);
-                text-decoration: none;
-                padding: 10px 0;
+            .mobile-menu.active {
                 display: block;
-                position: relative;
-                transition: all 0.3s ease;
             }
 
-            .header-transparent .main-menu > li > a:hover {
+            .mobile-menu-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            .mobile-menu-list li {
+                margin: 20px 0;
+            }
+
+            .mobile-menu-list a {
                 color: white;
+                font-size: 24px;
+                font-weight: 500;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                display: block;
+                padding: 15px;
             }
 
-            .header-transparent .main-menu > li > a:before {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background-color: var(--primary-color);
-                transition: width 0.3s ease;
+            .mobile-menu-list a:hover {
+                color: var(--primary-color);
             }
 
-            .header-transparent .main-menu > li:hover > a:before {
-                width: 100%;
+            /* Media Queries */
+            @media (max-width: 768px) {
+                .main-menu {
+                    display: none !important;
+                }
+
+                .hamburger-menu {
+                    display: block;
+                    position: relative;
+                    z-index: 1001;
+                    margin-right: 0;
+                    margin-left: 20px;
+                    order: -1;
+                }
+
+                .header-transparent .header-inner {
+                    padding: 10px 15px;
+                    justify-content: flex-start;
+                }
+
+                nav {
+                    justify-content: flex-start;
+                }
+
+                .header-transparent .logo {
+                    width: 100px;
+                }
+
+                .hero-section {
+                    height: 100vh;
+                    margin-top: 0;
+                    padding-top: 60px;
+                }
+
+                .hero-background {
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.7;
+                }
+
+                .hero-overlay {
+                    background: linear-gradient(
+                        180deg,
+                        rgba(0, 0, 0, 0.4) 0%,
+                        rgba(0, 0, 0, 0.6) 50%,
+                        rgba(0, 0, 0, 0.8) 100%
+                    );
+                }
+
+                .hero-content {
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    padding: 20px;
+                }
+
+                .hero-title {
+                    font-size: 28px;
+                    line-height: 1.4;
+                    margin: 0;
+                    padding: 0 15px;
+                }
+
+                .hero-title span {
+                    font-size: 24px;
+                    display: block;
+                    margin-top: 15px;
+                    color: #ffce59;
+                }
+
+                .hero-mcafee-logo {
+                    width: 120px;
+                    margin-bottom: 20px;
+                }
+
+                .mobile-menu {
+                    padding-top: 60px;
+                }
+
+                h1 {
+                    font-size: 42px;
+                    line-height: 1.2;
+                }
+
+                h2 {
+                    font-size: 36px;
+                    line-height: 1.2;
+                }
+
+                h3 {
+                    font-size: 28px;
+                    line-height: 1.3;
+                }
+
+                h4 {
+                    font-size: 24px;
+                    line-height: 1.3;
+                }
+
+                h5 {
+                    font-size: 20px;
+                    line-height: 1.4;
+                }
+
+                h6 {
+                    font-size: 18px;
+                    line-height: 1.4;
+                }
+
+                .section-title-wrapper {
+                    margin-bottom: 30px;
+                }
+
+                .section-title-wrapper h3 {
+                    margin-left: 0;
+                    font-size: 28px;
+                    line-height: 1.3;
+                    margin-bottom: 20px;
+                }
+
+                .section-subtitle {
+                    font-size: 13px;
+                    padding-left: 40px;
+                }
+
+                .section-subtitle:before {
+                    width: 30px;
+                }
+
+                .about-us-content {
+                    padding: 30px 20px;
+                }
+
+                .about-us-text {
+                    font-size: 15px;
+                    line-height: 1.6;
+                }
+
+                .team-section h3,
+                .events-section h3,
+                .what-we-do h3,
+                .contact-section h3 {
+                    font-size: 28px;
+                    line-height: 1.3;
+                    margin-bottom: 20px;
+                }
+
+                .service-content h4 {
+                    font-size: 20px;
+                    line-height: 1.3;
+                    margin-bottom: 10px;
+                }
+
+                .service-content p {
+                    font-size: 15px;
+                    line-height: 1.5;
+                }
+
+                .contact-description {
+                    font-size: 15px;
+                    line-height: 1.5;
+                    margin-bottom: 30px;
+                    padding: 0 15px;
+                }
             }
 
-            .header-transparent .logo-white, .header-transparent .logo-dark {
-                background-image: url('images/nj_malayalee_charity_logo.png') !important;
+            @media (max-width: 480px) {
+                .hero-title {
+                    font-size: 24px;
+                }
+
+                .hero-title span {
+                    font-size: 20px;
+                }
+
+                h1 {
+                    font-size: 36px;
+                }
+
+                h2 {
+                    font-size: 32px;
+                }
+
+                h3 {
+                    font-size: 24px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                }
+
+                h5 {
+                    font-size: 18px;
+                }
+
+                h6 {
+                    font-size: 16px;
+                }
+
+                .section-title-wrapper h3 {
+                    font-size: 24px;
+                }
+
+                .about-us-text {
+                    font-size: 14px;
+                }
+
+                .service-content h4 {
+                    font-size: 18px;
+                }
+
+                .service-content p {
+                    font-size: 14px;
+                }
+
+                .contact-description {
+                    font-size: 14px;
+                }
             }
 
             /* Navigation */
@@ -286,7 +538,7 @@
 
             /* Hero Section */
             .hero-section {
-                height: 25vh;
+                height: 60vh;
                 position: relative;
                 overflow: hidden;
                 background-color: #000;
@@ -383,13 +635,14 @@
             }
 
             .hero-content {
-                max-width: 1000px;
-                padding: 0 15px;
                 position: relative;
-                z-index: 2;
+                z-index: 3;
+                padding: 0 20px;
+                max-width: 1200px;
+                margin: 0 auto;
                 display: flex;
                 align-items: center;
-                gap: 40px;
+                height: 100%;
             }
 
             .hero-title {
@@ -1109,6 +1362,16 @@
                 color: white;
             }
 
+            .copyright span {
+                color: var(--primary-color);
+            }
+
+            .copyright::before {
+                content: "©";
+                color: var(--primary-color);
+                margin-right: 5px;
+            }
+
             /* Responsive Footer Styles */
             @media (max-width: 991px) {
                 .prefooter {
@@ -1399,84 +1662,6 @@
                 visibility: visible;
             }
 
-            /* Hamburger Menu */
-            .hamburger-menu {
-                display: none;
-                cursor: pointer;
-                width: 30px;
-                height: 20px;
-                position: relative;
-                margin-left: auto;
-            }
-
-            .hamburger-menu span {
-                display: block;
-                position: absolute;
-                height: 2px;
-                width: 100%;
-                background: white;
-                transition: all 0.3s ease;
-            }
-
-            .hamburger-menu span:nth-child(1) { top: 0; }
-            .hamburger-menu span:nth-child(2) { top: 9px; }
-            .hamburger-menu span:nth-child(3) { top: 18px; }
-
-            /* Mobile Menu */
-            .mobile-menu {
-                display: none;
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.95);
-                padding: 20px;
-                z-index: 999;
-            }
-
-            .mobile-menu.active {
-                display: block;
-            }
-
-            .mobile-menu-list {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .mobile-menu-list li {
-                margin-bottom: 15px;
-                text-align: center;
-            }
-
-            .mobile-menu-list a {
-                color: white;
-                font-size: 18px;
-                font-weight: 500;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-
-            .mobile-menu-list a:hover {
-                color: var(--primary-color);
-            }
-
-            @media (max-width: 768px) {
-                .main-menu {
-                    display: none;
-                }
-
-                .hamburger-menu {
-                    display: block;
-                }
-
-                .header-transparent .header-inner,
-                .header-sticky .header-inner {
-                    justify-content: flex-end;
-                    padding: 15px 20px;
-                }
-            }
-
             /* What We Do Section Styles */
             .what-we-do {
                 padding: 80px 0;
@@ -1734,23 +1919,21 @@
     <body>
         <!-- Header -->
         <header class="header-transparent">
-            <div class="container">
-                <div class="header-inner">
-                    <nav>
-                        <ul class="main-menu">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#about-us">About</a></li>
-                            <li><a href="events.html">Events</a></li>
-                            <li><a href="#team-section">Team</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <div class="hamburger-menu">
+            <div class="header-inner">
+                <nav>
+                    <ul class="main-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about-us">About</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="#team-section">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="hamburger-menu" aria-label="Menu">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
-                </div>
+                    </button>
+                </nav>
             </div>
         </header>
 
@@ -1767,17 +1950,11 @@
 
         <!-- Hero Section -->
         <section class="hero-section">
-            <div class="hero-slide">
-                <div class="hero-background"></div>
-                <div class="hero-overlay"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <img src="images/mcefee_logo_black_border_transparent.png" alt="McAfee Secured" class="hero-mcafee-logo">
-                        <div>
-                            <h1 class="hero-title">Connecting Cultures, Empowering Generations – <span style="color: var(--primary-color);">Celebrating Malayali Roots in the USA</span></h1>
-                        </div>
-                    </div>
-                </div>
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img src="images/mcefee_logo_black_border_transparent.png" alt="MCEFEE Logo" class="hero-mcafee-logo">
+                <h1 class="hero-title">Connecting Cultures, Empowering Generations – <span style="color: #ffce59;">Celebrating Malayali Roots in the USA</span></h1>
             </div>
         </section>
 
@@ -1785,9 +1962,8 @@
         <section class="feature-boxes">
             <div class="feature-box">
                 <div>
-                    <h4>Story behind the foundation </h4>
-                    <div class="subtitle-text">Mission and Vision</div>
-                    <a href="#" class="link-text">Watch Video</a>
+                    <h4>Story behind the foundation</h4>
+                    <a href="#about-us" class="link-text">Mission and Vision</a>
                 </div>
             </div>
             <div class="feature-box">
@@ -1797,6 +1973,18 @@
                 </div>
             </div>
         </section>
+
+        <script>
+        // Add click handler for the popup image
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureBox = document.querySelector('.feature-box:nth-child(2)');
+            featureBox.addEventListener('click', function(e) {
+                if (e.target === this || this.contains(e.target)) {
+                    window.location.href = 'events.html';
+                }
+            });
+        });
+        </script>
 
         <!-- What We Do Section -->
         <section class="what-we-do">
@@ -2217,7 +2405,7 @@
                 <div class="container">
                     <div class="footer-wrapper">
                         <div class="copyright">
-                            © <span id="currentYear"></span> <a href="#">MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events</a>
+                            <span id="currentYear"></span> <a href="#">MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events</a>
                         </div>
                     </div>
                 </div>
@@ -2276,17 +2464,54 @@
             // Mobile Menu Toggle
             const hamburgerMenu = document.querySelector('.hamburger-menu');
             const mobileMenu = document.querySelector('.mobile-menu');
+            const body = document.body;
 
-            hamburgerMenu.addEventListener('click', () => {
+            function toggleMenu() {
                 mobileMenu.classList.toggle('active');
                 hamburgerMenu.classList.toggle('active');
+                body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            }
+
+            // Add click event to hamburger menu
+            hamburgerMenu.addEventListener('click', toggleMenu);
+
+            // Close mobile menu when clicking on menu items
+            document.querySelectorAll('.mobile-menu-list a').forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleMenu();
+
+                    // Handle smooth scrolling for anchor links
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            event.preventDefault();
+                            const headerOffset = 80;
+                            const elementPosition = target.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
             });
 
             // Close mobile menu when clicking outside
             document.addEventListener('click', (e) => {
-                if (!hamburgerMenu.contains(e.target) && !mobileMenu.contains(e.target)) {
-                    mobileMenu.classList.remove('active');
-                    hamburgerMenu.classList.remove('active');
+                if (mobileMenu.classList.contains('active') &&
+                    !hamburgerMenu.contains(e.target) &&
+                    !mobileMenu.contains(e.target)) {
+                    toggleMenu();
+                }
+            });
+
+            // Close mobile menu on window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+                    toggleMenu();
                 }
             });
 
