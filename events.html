@@ -451,6 +451,10 @@
                 opacity: 1;
             }
 
+            .footer-contact a:hover:after {
+                width: 100%;
+            }
+
             .footer-menu {
                 list-style: none;
                 padding: 0;
@@ -531,6 +535,19 @@
                 content: "©";
                 color: var(--primary-color);
                 margin-right: 5px;
+            }
+
+             .main-event {
+                background: var(--primary-color);
+                padding: 40px;
+                height: auto;
+                border-radius: 10px;
+                margin-bottom: 60px;
+            }
+
+            .main-event h4 {
+                margin: 15px 0;
+                color: var(--secondary-color);
             }
 
             /* Responsive Footer Styles */
@@ -939,6 +956,26 @@
                 padding: 15px;
             }
 
+            .section-subtitle {
+                font-size: 14px;
+                color: var(--primary-color);
+                margin-bottom: 10px;
+                display: inline-block;
+                text-transform: uppercase;
+                position: relative;
+                padding-left: 50px;
+            }
+
+            .section-subtitle:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 40px;
+                height: 1px;
+                background-color: var(--primary-color);
+            }
+
             /* Mobile Styles */
             @media (max-width: 768px) {
                 .event-item {
@@ -992,6 +1029,11 @@
                     width: 70px;
                     min-width: 70px;
                 }
+            }
+
+            .events-section {
+                padding-top: 100px;
+                padding-bottom: 100px;
             }
         </style>
 
@@ -1051,7 +1093,7 @@
         </section>
 
         <!-- Events Content Section -->
-        <section class="events-section" style="padding-top: 100px;">
+        <section class="events-section">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-8">
@@ -1105,14 +1147,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-8">
                         <div class="main-event">
-                            <span>Main event</span>
-                            <h4>Night with<br>Kerala culture</h4>
-                            <p>Experience the rich heritage<br>of God's Own Country</p>
-                            <p>Jan. 15 / 26 - 10pm</p>
-                            <p>Manhattan Club 350 5th Ave, New York, NY</p>
-                            <a href="#" class="button">
+
+                            <span >Main event</span>
+                            <h4>SPIRIT OF KERALA</h4>
+                            <p>We are excited to announce SPIRIT OF KERALA – a grand celebration of Kerala's most iconic festival, Onam, set to take place in the USA in 2025. This event promises to be an unforgettable experience, capturing the true essence of Onam through a power-packed performance that showcases the vibrant culture, traditions, and spirit of Kerala.</p>
+                            <a href="events.html" class="button">
                                 <span>Explore more</span>
                                 <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72029 1.27952L2.60273 1.27947L2.60273 -1.13769e-07L8.99994 5.3966e-05L9 6.39733L7.72055 6.39733L7.72029 1.27952Z"/>
@@ -1137,10 +1178,7 @@
                                 </div>
                                 <h6 class="footer-widget-title">Follow us</h6>
                                 <ul class="footer-socials">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61573944338286" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1149,9 +1187,8 @@
                                 <h6 class="footer-widget-title">Contacts</h6>
                                 <div class="footer-contact">
                                     <p>MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events<br>New Jersey, USA</p>
-                                    <p><a href="tel:+13685678954">+1 (368) 567 89 54</a><br>
-                                    <a href="tel:+8003508431">+ 800 350 84 31</a></p>
-                                    <p><a href="mailto:contact@njmalayalees.org">contact@njmalayalees.org</a></p>
+                                    <p><a href="tel:+19085168781">(908) 516-8781</a></p>
+                                    <p><a href="mailto:Contactus@mcefee.org">Contactus@mcefee.org</a></p>
                                 </div>
                             </div>
                         </div>

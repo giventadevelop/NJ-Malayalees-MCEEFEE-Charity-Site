@@ -1033,12 +1033,13 @@
             .team-grid {
                 display: flex;
                 flex-wrap: wrap;
-                margin: 0 -15px;
+                margin: 0 -10px;
+                justify-content: center;
             }
 
             .team-item {
-                width: calc(25% - 30px);
-                margin: 0 15px 30px;
+                width: calc(20% - 20px);
+                margin: 0 10px 30px;
                 position: relative;
             }
 
@@ -1046,11 +1047,14 @@
                 position: relative;
                 overflow: hidden;
                 border-radius: 10px;
+                aspect-ratio: 1;
+                width: 100%;
             }
 
             .team-image img {
                 width: 100%;
-                height: auto;
+                height: 100%;
+                object-fit: cover;
                 transition: transform 0.3s ease;
             }
 
@@ -1106,16 +1110,41 @@
 
             .team-content {
                 padding: 20px 0;
+                text-align: center;
             }
 
             .team-title {
                 margin: 0 0 5px;
                 font-size: 20px;
+                line-height: 1.4;
             }
 
             .team-position {
                 color: var(--text-color);
                 font-size: 14px;
+            }
+
+            @media (max-width: 991px) {
+                .team-item {
+                    width: calc(25% - 20px);
+                }
+            }
+
+            @media (max-width: 767px) {
+                .team-item {
+                    width: calc(50% - 20px);
+                }
+
+                .team-title {
+                    font-size: 18px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .team-item {
+                    width: calc(100% - 20px);
+                    max-width: 280px;
+                }
             }
 
             /* Testimonials */
@@ -1963,7 +1992,7 @@
             <div class="feature-box">
                 <div>
                     <h4>Story behind the foundation</h4>
-                    <a href="#about-us" class="link-text">Mission and Vision</a>
+                    <a href="#vision-section" class="link-text">Mission and Vision</a>
                 </div>
             </div>
             <div class="feature-box">
@@ -1995,6 +2024,19 @@
                 </div>
 
                 <div class="services-grid">
+                    <!-- Traditional Dance & Music -->
+                    <div class="service-item dance-music">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6zm-2 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h4>Traditional Dance & Music</h4>
+                            <p>Experience the rich heritage of Kerala through dance and music workshops.</p>
+                        </div>
+                    </div>
+
                     <!-- Art & Craft -->
                     <div class="service-item art-craft">
                         <div class="service-icon">
@@ -2018,19 +2060,6 @@
                         <div class="service-content">
                             <h4>Malayalam Language Classes</h4>
                             <p>Learn to read, write, and speak Malayalam with experienced instructors.</p>
-                        </div>
-                    </div>
-
-                    <!-- Traditional Dance & Music -->
-                    <div class="service-item dance-music">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6zm-2 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h4>Traditional Dance & Music</h4>
-                            <p>Experience the rich heritage of Kerala through dance and music workshops.</p>
                         </div>
                     </div>
 
@@ -2083,6 +2112,48 @@
             </div>
         </section>
 
+        <!-- Vision Section -->
+        <section class="testimonials-section" id="vision-section">
+            <div class="container">
+                <div class="about-us-container">
+                    <div class="about-us-content">
+                        <div class="section-title-wrapper">
+                            <span class="section-subtitle">Vision Statement</span>
+                            <h3 style="margin-left: 50px;">Our Vision</h3>
+                        </div>
+                        <div class="about-us-text">
+                            <p>Our vision is to create a thriving community where Malayali culture is celebrated, preserved, and passed on to future generations. We envision a foundation that acts as a hub for cultural exchange, education, and unity, fostering pride in our heritage while adapting it for the modern world. By building lasting connections, both within the Malayali community and with others, we strive to contribute to a greater understanding and appreciation of Kerala's traditions and values in the USA. We aim to be a beacon of empowerment, nostalgia, and cultural pride for generations to come.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="testimonials-section" id="story-section">
+            <div class="container">
+                <div class="about-us-container">
+                    <div class="about-us-content">
+                        <div class="section-title-wrapper">
+                            <span class="section-subtitle">Our Story</span>
+                            <h3 style="margin-left: 50px;">Story Behind the Foundation</h3>
+                        </div>
+                        <div class="about-us-text">
+                            <p>The Malayali Cultural Exchange Foundation for Education and Events was born out of a deep passion for preserving and sharing the rich cultural heritage of Kerala with the Malayali community in the USA. The idea emerged when a group of passionate individuals, united by their love for their roots, began to realize the power of genuine, quality cultural experiences in fostering connection and belonging.</p>
+
+                            <p>In observing the growing need for meaningful cultural events within our community, we were inspired by the realization that even though many of our events might not attract large crowds, they held immense value in creating lasting memories and deepening connections. We recognized that the true strength of our culture lies not in large numbers or grandeur, but in the authentic exchange of traditions, stories, and experiences that resonate deeply with individuals.</p>
+
+                            <p>Through intimate gatherings, educational programs, and cultural celebrations, we witnessed firsthand the positive impact of quality events—ones that went beyond surface-level interactions to truly engage participants, invoking nostalgia, pride, and a sense of home. These moments of connection made it clear that there was a growing desire for a space where people could celebrate the richness of Malayali culture while empowering the next generation to continue these traditions.</p>
+
+                            <p>This understanding fueled the creation of our foundation: a platform that focuses on quality over quantity, where every event is designed to foster deeper cultural understanding and create lasting bonds within the community. Our goal has always been to offer something more than just a celebration—we aim to provide experiences that honor the values of Kerala while adapting them to the modern context, ensuring they remain relevant and meaningful for future generations.</p>
+
+                            <p>The foundation is not just about holding events; it's about creating a legacy. It's about offering a nostalgic sense of home to those who have moved far from Kerala and empowering younger generations to carry forward the cultural torch. We are driven by the belief that every interaction, no matter how small the crowd, is a step toward preserving and passing on the vibrant traditions of Kerala for years to come.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Team Section -->
         <section class="team-section" id="team-section">
             <div class="container">
@@ -2096,13 +2167,6 @@
                             <div class="counter">500+</div>
                             <div class="counter-title">Team members</div>
                         </div>
-                        <a href="#" class="button">
-                            <span>Explore more</span>
-                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72029 1.27952L2.60273 1.27947L2.60273 -1.13769e-07L8.99994 5.3966e-05L9 6.39733L7.72055 6.39733L7.72029 1.27952Z"/>
-                                <path d="M0.90471 9L-3.95466e-08 8.09528L8.03093 0.0642592L8.93564 0.968978L0.90471 9Z"/>
-                            </svg>
-                        </a>
                     </div>
                 </div>
 
@@ -2110,17 +2174,15 @@
                     <!-- Team Member 1 -->
                     <div class="team-item">
                         <div class="team-image">
-                            <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/team_1-305x418.jpg" alt="Team Member">
+                            <img src="images/team_members/sujith_karakkadan.jpeg" alt="Team Member">
                             <div class="team-overlay">
                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.facebook.com/sujith.thottan" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="team-content">
-                            <h5 class="team-title">Ivan Schevcenko</h5>
+                            <h5 class="team-title">Sujith Karakkadan</h5>
                             <div class="team-position">Volunteer</div>
                         </div>
                     </div>
@@ -2128,17 +2190,15 @@
                     <!-- Team Member 2 -->
                     <div class="team-item">
                         <div class="team-image">
-                            <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/team_2-305x418.jpg" alt="Team Member">
+                            <img src="images/team_members/arun_sadasivan.jpeg" alt="Team Member">
                             <div class="team-overlay">
                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.facebook.com/arun.sadasivan.3" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="team-content">
-                            <h5 class="team-title">Denis Klopotenko</h5>
+                            <h5 class="team-title">Arun Sadasivan</h5>
                             <div class="team-position">Volunteer</div>
                         </div>
                     </div>
@@ -2146,17 +2206,15 @@
                     <!-- Team Member 3 -->
                     <div class="team-item">
                         <div class="team-image">
-                            <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/team_3-305x418.jpg" alt="Team Member">
+                            <img src="images/team_members/latha_krishnan.jpeg" alt="Team Member" style="object-position: center 20%;">
                             <div class="team-overlay">
                                 <ul class="team-socials">
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="team-content">
-                            <h5 class="team-title">Dmytro Savchuk</h5>
+                            <h5 class="team-title">Latha Krishnan</h5>
                             <div class="team-position">Head Volunteer</div>
                         </div>
                     </div>
@@ -2164,17 +2222,15 @@
                     <!-- Team Member 4 -->
                     <div class="team-item">
                         <div class="team-image">
-                            <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/team_4-305x418.jpg" alt="Team Member">
+                            <img src="images/team_members/varun_lal.jpeg" alt="Team Member">
                             <div class="team-overlay">
                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.facebook.com/lalvarun" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="team-content">
-                            <h5 class="team-title">Serhiy Demchuk</h5>
+                            <h5 class="team-title">Varun Lal</h5>
                             <div class="team-position">Volunteer</div>
                         </div>
                     </div>
@@ -2189,7 +2245,7 @@
                     <span class="section-subtitle">Contact</span>
                     <h3>Get in touch</h3>
                 </div>
-                <p class="contact-description">Connect with us to learn more about our community initiatives and how you can get involved in preserving and promoting Malayali culture in New Jersey.</p>
+                <p class="contact-description">Connect with us to learn more about our community initiatives and how you can get involved in preserving and promoting Malayali culture across the United States. Join us in fostering cultural exchange and building stronger connections within our diverse communities.</p>
 
                 <div class="contact-grid">
                     <!-- Location -->
@@ -2201,25 +2257,15 @@
                     <!-- Phone -->
                     <div class="contact-item">
                         <h6>Phone</h6>
-                        <p>+1 (368) 567 89 54</p>
-                        <p>+ 800 350 84 31</p>
+                        <p><a href="tel:+19085168781">(908) 516-8781</a></p>
                     </div>
 
                     <!-- Social -->
                     <div class="contact-item">
                         <h6>Social</h6>
                         <div class="social-icons">
-                            <a href="#" class="social-icon" target="_blank">
+                            <a href="https://www.facebook.com/profile.php?id=61573944338286" class="social-icon" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-icon" target="_blank">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-icon" target="_blank">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="social-icon" target="_blank">
-                                <i class="fab fa-youtube"></i>
                             </a>
                         </div>
                     </div>
@@ -2227,7 +2273,7 @@
                     <!-- Email -->
                     <div class="contact-item">
                         <h6>Email</h6>
-                        <p><a href="mailto:contact@njmalayalees.org">contact@njmalayalees.org</a></p>
+                        <p><a href="mailto:Contactus@mcefee.org">Contactus@mcefee.org</a></p>
                     </div>
                 </div>
             </div>
@@ -2296,13 +2342,12 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-8">
                         <div class="main-event">
-                            <span>Main event</span>
-                            <h4>Night with<br>Kerala culture</h4>
-                            <p>Experience the rich heritage<br>of God's Own Country</p>
-                            <p>Jan. 15 / 26 - 10pm</p>
-                            <p>Manhattan Club 350 5th Ave, New York, NY</p>
+
+                            <span >Main event</span>
+                            <h4>SPIRIT OF KERALA</h4>
+                            <p>We are excited to announce SPIRIT OF KERALA – a grand celebration of Kerala's most iconic festival, Onam, set to take place in the USA in 2025. This event promises to be an unforgettable experience, capturing the true essence of Onam through a power-packed performance that showcases the vibrant culture, traditions, and spirit of Kerala.</p>
                             <a href="events.html" class="button">
                                 <span>Explore more</span>
                                 <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2349,7 +2394,7 @@
                     <div class="col-12 col-md-6">
                         <div class="cta-content">
                             <h3>The long journey to end poverty begins with a child.</h3>
-                            <a href="#" class="button">Donate</a>
+
                         </div>
                     </div>
                 </div>
@@ -2368,10 +2413,7 @@
                                 </div>
                                 <h6 class="footer-widget-title">Follow us</h6>
                                 <ul class="footer-socials">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61573944338286" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -2380,9 +2422,8 @@
                                 <h6 class="footer-widget-title">Contacts</h6>
                                 <div class="footer-contact">
                                     <p>MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events<br>New Jersey, USA</p>
-                                    <p><a href="tel:+13685678954">+1 (368) 567 89 54</a><br>
-                                    <a href="tel:+8003508431">+ 800 350 84 31</a></p>
-                                    <p><a href="mailto:contact@njmalayalees.org">contact@njmalayalees.org</a></p>
+                                    <p><a href="tel:+19085168781">(908) 516-8781</a></p>
+                                    <p><a href="mailto:Contactus@mcefee.org">Contactus@mcefee.org</a></p>
                                 </div>
                             </div>
                         </div>
@@ -2567,4 +2608,5 @@
             });
         </script>
     </body>
+</html>
 </html>
