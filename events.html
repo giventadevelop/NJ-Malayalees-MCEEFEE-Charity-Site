@@ -377,6 +377,24 @@
                 color: white;
             }
 
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -15px;
+            }
+
+            .col-12 {
+                width: 100%;
+                padding: 0 15px;
+            }
+
             .footer-widget {
                 margin-bottom: 30px;
             }
@@ -401,10 +419,6 @@
                 transition: opacity 0.3s ease;
             }
 
-            .footer-logo img:hover {
-                opacity: 1;
-            }
-
             .footer-socials {
                 display: flex;
                 list-style: none;
@@ -414,22 +428,43 @@
                 gap: 15px;
             }
 
-            .footer-socials a {
-                width: 40px;
-                height: 40px;
+            .footer-socials li a {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background: rgba(255, 255, 255, 0.1);
+                width: 36px;
+                height: 36px;
+                background-color: rgba(255, 255, 255, 0.1);
                 border-radius: 50%;
                 color: white;
                 transition: all 0.3s ease;
             }
 
-            .footer-socials a:hover {
-                background: var(--primary-color);
-                color: var(--secondary-color);
-                transform: translateY(-3px);
+            .footer-menu {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-menu li {
+                margin-bottom: 0;
+            }
+
+            .footer-menu a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                opacity: 0.9;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            .footer-menu a:hover {
+                opacity: 1;
+                padding-left: 5px;
             }
 
             .footer-contact p {
@@ -447,55 +482,154 @@
             }
 
             .footer-contact a:hover {
-                color: var(--primary-color);
                 opacity: 1;
             }
 
-            .footer-contact a:hover:after {
-                width: 100%;
+            /* Mobile First Layout */
+            @media (max-width: 767px) {
+                .prefooter {
+                    padding: 40px 0;
+                    text-align: center;
+                }
+
+                .container {
+                    padding: 0 15px;
+                }
+
+                .row {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .col-12 {
+                    width: 100%;
+                    max-width: 450px; /* Limit width for better readability */
+                }
+
+                .footer-widget {
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .footer-logo {
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                }
+
+                .footer-logo img {
+                    max-width: 180px;
+                    margin: 0 auto;
+                }
+
+                .footer-widget-title {
+                    text-align: center;
+                    width: 100%;
+                }
+
+                .footer-socials {
+                    justify-content: center;
+                    margin: 20px auto;
+                    width: 100%;
+                }
+
+                .footer-menu {
+                    align-items: center;
+                    text-align: center;
+                    margin: 20px auto 0;
+                    width: 100%;
+                }
+
+                .footer-menu li {
+                    margin: 10px 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .footer-menu a {
+                    display: inline-block; /* Makes the entire text clickable */
+                }
+
+                .footer-contact {
+                    text-align: center;
+                    margin-bottom: 20px;
+                    width: 100%;
+                }
+
+                .footer-contact p {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                /* Reorder footer sections in mobile */
+                .footer-widget:nth-child(1) {
+                    order: 1;
+                }
+
+                .footer-widget:nth-child(3) {
+                    order: 2;
+                    margin-bottom: 0;
+                }
+
+                .footer-widget:nth-child(2) {
+                    order: 3;
+                    margin-top: 0;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    padding-top: 20px;
+                }
+
+                /* Hide the Main menu title in mobile as requested */
+                .footer-widget:nth-child(2) .footer-widget-title {
+                    display: none;
+                }
+
+                /* Make links more tap-friendly on mobile */
+                .footer-menu a, .footer-contact a {
+                    padding: 5px 10px;
+                    display: inline-block;
+                }
             }
 
-            .footer-menu {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 30px;
+            /* Tablet and Desktop Layout */
+            @media (min-width: 768px) {
+                .col-md-4 {
+                    width: 33.33%;
+                    float: left;
+                }
+
+                .row::after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                .footer-widget {
+                    height: 100%;
+                    margin-bottom: 0;
+                }
+
+                /* Ensure all columns have the same top alignment */
+                .footer-widget-title {
+                    margin-top: 0;
+                }
             }
 
-            .footer-menu li {
-                margin-bottom: 0;
-            }
+            /* Larger Desktop Screens */
+            @media (min-width: 992px) {
+                .prefooter {
+                    padding: 80px 0;
+                }
 
-            .footer-menu a {
-                color: white;
-                text-decoration: none;
-                font-size: 16px;
-                opacity: 0.9;
-                transition: all 0.3s ease;
-                position: relative;
-                white-space: nowrap;
-            }
-
-            .footer-menu a:after {
-                content: '';
-                position: absolute;
-                width: 0;
-                height: 2px;
-                bottom: -5px;
-                left: 0;
-                background-color: var(--primary-color);
-                transition: width 0.3s ease;
-            }
-
-            .footer-menu a:hover {
-                color: var(--primary-color);
-                opacity: 1;
-            }
-
-            .footer-menu a:hover:after {
-                width: 100%;
+                .footer-widget:nth-child(2) {
+                    padding-left: 30px;
+                }
             }
 
             .footer {
@@ -548,99 +682,6 @@
             .main-event h4 {
                 margin: 15px 0;
                 color: var(--secondary-color);
-            }
-
-            /* Responsive Footer Styles */
-            @media (max-width: 991px) {
-                .prefooter {
-                    padding: 50px 0;
-                }
-
-                .footer-widget {
-                    margin-bottom: 40px;
-                }
-
-                .col-md-4 {
-                    width: 50%;
-                }
-
-                .footer-logo {
-                    text-align: left;
-                }
-            }
-
-            @media (max-width: 767px) {
-                .prefooter {
-                    padding: 40px 0;
-                }
-
-                .col-md-4 {
-                    width: 100%;
-                }
-
-                .footer-widget {
-                    margin-bottom: 30px;
-                    text-align: center;
-                }
-
-                .footer-logo {
-                    text-align: center;
-                }
-
-                .footer-socials {
-                    justify-content: center;
-                }
-
-                .footer-menu {
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 15px;
-                }
-
-                .footer-menu li {
-                    margin: 0;
-                    text-align: center;
-                    width: 100%;
-                }
-
-                .footer-menu a {
-                    display: inline-block;
-                    padding: 5px 0;
-                }
-
-                .footer-contact {
-                    text-align: center;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .prefooter {
-                    padding: 30px 0;
-                }
-
-                .footer-widget-title {
-                    font-size: 18px;
-                    margin-bottom: 20px;
-                }
-
-                .footer-logo img {
-                    max-width: 150px;
-                }
-
-                .footer-socials a {
-                    width: 35px;
-                    height: 35px;
-                }
-
-                .footer-menu a,
-                .footer-contact p,
-                .footer-contact a {
-                    font-size: 14px;
-                }
-
-                .copyright {
-                    font-size: 13px;
-                }
             }
 
             /* Back to Top Button */
@@ -1261,16 +1302,6 @@
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="footer-widget">
-                                <h6 class="footer-widget-title">Contacts</h6>
-                                <div class="footer-contact">
-                                    <p>MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events<br>New Jersey, USA</p>
-                                    <p><a href="tel:+19085168781">(908) 516-8781</a></p>
-                                    <p><a href="mailto:Contactus@mcefee.org">Contactus@mcefee.org</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="footer-widget">
                                 <h6 class="footer-widget-title">Main menu</h6>
                                 <ul class="footer-menu">
                                     <li><a href="index.html">Home</a></li>
@@ -1279,6 +1310,16 @@
                                     <li><a href="index.html#team-section">Team</a></li>
                                     <li><a href="index.html#contact">Contact</a></li>
                                 </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="footer-widget">
+                                <h6 class="footer-widget-title">Contacts</h6>
+                                <div class="footer-contact">
+                                    <p>MCEFEE<br>Malayali Cultural Exchange Foundation<br>for Education and Events<br>New Jersey, USA</p>
+                                    <p><a href="tel:+19085168781">(908) 516-8781</a></p>
+                                    <p><a href="mailto:Contactus@mcefee.org">Contactus@mcefee.org</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
