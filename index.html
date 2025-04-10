@@ -753,7 +753,7 @@
 
             .feature-box {
                 flex: 1;
-                padding: 25px;
+                padding: 30px;  /* Increased padding for better spacing */
                 position: relative;
                 display: flex;
                 flex-direction: column;
@@ -773,14 +773,18 @@
                 bottom: 0;
                 background: linear-gradient(
                     to bottom,
-                    rgba(28, 50, 71, 0.7),
-                    rgba(28, 50, 71, 0.8)
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.9)
                 );
                 z-index: 1;
             }
 
             .feature-box:nth-child(1) {
                 background-image: url('images/deepam_chirad.jpeg');
+                background-size: 80%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color: #1a1a1a;  /* Light black background */
             }
 
             .feature-box:nth-child(2) {
@@ -859,10 +863,10 @@
 
             .feature-box h4 {
                 color: white;
-                font-size: 20px;
-                line-height: 1.3;
-                font-weight: 300;
-                margin: 0 0 15px 0;
+                font-size: 22px;  /* Consistent font size */
+                line-height: 1.4;
+                font-weight: 400;
+                margin: 0 0 20px 0;
                 max-width: 90%;
                 position: relative;
                 z-index: 2;
@@ -871,13 +875,16 @@
             }
 
             .feature-box .link-text {
-                color: var(--primary-color);
+                color: #ffce59;  /* Matching the hero section yellow */
                 font-size: 16px;
-                font-weight: 500;
+                font-weight: 600;  /* Made bolder */
                 text-decoration: none;
                 position: relative;
                 display: inline-block;
                 padding-bottom: 5px;
+                opacity: 1;  /* Ensure full opacity */
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);  /* Added subtle shadow for better visibility */
+                z-index: 2;  /* Ensure it's above the overlay */
             }
 
             .feature-box .link-text::after {
@@ -887,19 +894,21 @@
                 left: 0;
                 width: 100%;
                 height: 2px;
-                background-color: var(--primary-color);
+                background-color: #ffce59;  /* Matching the text color */
                 transform: scaleX(1);
                 transform-origin: left;
                 transition: transform 0.3s ease;
+                opacity: 1;  /* Ensure full opacity */
+            }
+
+            .feature-box .link-text:hover {
+                color: #ffce59;  /* Keep the same color on hover */
+                opacity: 0.9;  /* Slight opacity change on hover */
             }
 
             .feature-box .link-text:hover::after {
                 transform: scaleX(0);
                 transform-origin: right;
-            }
-
-            .feature-box .link-text:hover {
-                opacity: 1;
             }
 
             .feature-box .subtitle-text {
@@ -1087,7 +1096,7 @@
 
             /* Team Section */
             .team-section {
-                padding: 80px 0;
+                padding: 40px 0;
             }
 
             .team-grid {
@@ -1209,7 +1218,7 @@
 
             /* Testimonials */
             .testimonials-section {
-                padding: 80px 0;
+                padding: 40px 0;
                 background-color: #f9f9f9;
             }
 
@@ -1500,6 +1509,9 @@
 /* Contact section */
 .footer-contact {
     text-align: left;
+    padding-right: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .footer-contact p {
@@ -1508,6 +1520,9 @@
     line-height: 1.6;
     opacity: 0.9;
     text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .footer-contact a {
@@ -1532,11 +1547,12 @@
     /* Contact column specific styles */
     .footer-widget:nth-child(3) {
         padding-left: 30px;
+        padding-right: 30px;
     }
 
     .footer-contact {
         text-align: left;
-        padding-right: 0;
+        padding-right: 30px;
     }
 
     .footer-contact p {
@@ -1770,7 +1786,7 @@
 
             /* Events Section */
             .events-section {
-                padding: 80px 0;
+                padding: 40px 0;
             }
 
             .event-item {
@@ -1846,7 +1862,7 @@
 
             /* Partners Section */
             .partners-section {
-                padding: 80px 0;
+                padding: 40px 0 10px;  /* Reduced bottom padding */
             }
 
             .partners-grid {
@@ -1878,23 +1894,23 @@
 
             /* CTA Section */
             .cta-section {
-                padding: 80px 0;
+                padding: 20px 0;  /* Reduced padding */
                 background-color: #f9f9f9;
+                margin-bottom: 0;
             }
 
             .cta-content {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                height: 100%;
-                padding: 40px;
+                padding: 20px;  /* Reduced padding */
                 background: var(--primary-color);
                 border-radius: 10px;
+                margin-bottom: 0;
             }
 
             .cta-content h3 {
                 color: var(--secondary-color);
-                margin-top: 0;
+                margin: 0;
+                font-size: 24px;  /* Reduced font size */
+                line-height: 1.3;
             }
 
             /* Back to Top Button */
@@ -1924,7 +1940,7 @@
 
             /* What We Do Section Styles */
             .what-we-do {
-                padding: 80px 0;
+                padding: 40px 0;
                 background: #fff;
             }
 
@@ -2055,7 +2071,7 @@
 
             /* Contact Section Styles */
             .contact-section {
-                padding: 80px 0;
+                padding: 40px 0;
                 background-color: #f9f9f9;
             }
 
@@ -2444,6 +2460,214 @@
                 .col-md-4 {
                     width: 33.33%;
                     float: left;
+                }
+            }
+
+            /* Footer logo section adjustments for desktop */
+            @media (min-width: 768px) {
+                .footer-widget:first-child {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .footer-logo {
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+
+                .footer-widget:first-child .footer-widget-title {
+                    text-align: center;
+                    margin: 10px 0;
+                }
+
+                .footer-socials {
+                    justify-content: center;
+                    margin: 10px 0;
+                }
+            }
+
+            /* CTA section image adjustment */
+            .cta-section img {
+                max-height: 300px;  /* Limit image height */
+                width: 100%;
+                object-fit: cover;
+            }
+
+            /* Events Section Mobile Styles */
+            @media (max-width: 768px) {
+                .events-section {
+                    padding-top: 60px;  /* Increased top padding */
+                }
+
+                .events-container {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 15px;
+                    padding: 15px;
+                }
+
+                .event-item {
+                    width: 100%;
+                    flex-direction: column;
+                    margin: 0;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                    background: white;
+                }
+
+                .event-image {
+                    width: 100%;
+                    height: 150px;
+                    margin: 0;
+                    padding: 0;
+                    border-radius: 10px 10px 0 0;
+                    overflow: hidden;
+                }
+
+                .event-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                .event-content {
+                    width: 100%;
+                    padding: 15px;
+                    text-align: left;
+                }
+
+                .event-title {
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                    color: #333;
+                    line-height: 1.3;
+                }
+
+                .event-address {
+                    font-size: 13px;
+                    color: #666;
+                    margin-bottom: 10px;
+                    line-height: 1.4;
+                }
+
+                .event-date {
+                    width: 100%;
+                    padding: 10px 15px;
+                    border-top: none;  /* Removed top border */
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    background: transparent;
+                    position: relative;
+                }
+
+                .event-date::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 15px;
+                    right: 15px;
+                    height: 1px;
+                    background: rgba(0, 0, 0, 0.1);
+                }
+
+                .event-time {
+                    font-size: 16px;
+                    margin-right: 10px;
+                    color: var(--primary-color);
+                }
+
+                /* Increase spacing above See all events button */
+                .button[href="events.html"] {
+                    margin-top: 40px !important;  /* Added important to override any existing styles */
+                    margin-bottom: 30px;
+                    display: inline-block;
+                }
+
+                .main-event {
+                    margin-top: 40px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .events-container {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 10px;
+                    padding: 10px;
+                }
+
+                .event-image {
+                    height: 120px;
+                }
+
+                .event-content {
+                    padding: 12px;
+                }
+
+                .event-title {
+                    font-size: 14px;
+                    margin-bottom: 6px;
+                }
+
+                .event-address {
+                    font-size: 12px;
+                    margin-bottom: 8px;
+                }
+
+                .event-date {
+                    padding: 8px 12px;
+                }
+
+                .event-time {
+                    font-size: 14px;
+                }
+
+                /* Maintain button spacing on smaller screens */
+                .button[href="events.html"] {
+                    margin-top: 30px !important;
+                }
+
+                .main-event {
+                    margin-top: 30px;
+                }
+            }
+
+            /* Story section specific styles */
+            #story-section .about-us-image {
+                width: 40%;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                min-height: 400px;
+            }
+
+            @media (min-width: 768px) {
+                .feature-box:nth-child(1) {
+                    background-size: 70%;  /* Even smaller on desktop */
+                    min-height: 300px;  /* Maintain minimum height */
+                }
+
+                #story-section .about-us-container {
+                    min-height: auto;
+                }
+
+                #story-section .about-us-image {
+                    width: 40%;
+                    padding: 0;
+                }
+            }
+
+            @media (max-width: 767px) {
+                #story-section .about-us-image {
+                    width: 100%;
+                    height: 300px;
+                    background-size: cover;
+                    padding: 0;
                 }
             }
         </style>
@@ -2903,14 +3127,13 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <div class="row">
+                <div class="row" style="align-items: center;">
                     <div class="col-12 col-md-6">
-                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/children_photo.jpg" alt="Children">
+                        <img src="https://demo.artureanec.com/themes/philantrop/wp-content/uploads/2024/03/children_photo.jpg" alt="Children" style="border-radius: 10px;">
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="cta-content">
                             <h3>The long journey to end poverty begins with a child.</h3>
-
                         </div>
                     </div>
                 </div>
