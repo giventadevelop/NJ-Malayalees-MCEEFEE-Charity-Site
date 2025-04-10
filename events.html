@@ -757,31 +757,20 @@
 
             /* Hero Section */
             .hero-section {
-                height: 25vh;
+                height: 40vh;
                 position: relative;
                 overflow: hidden;
                 background-color: #000;
-                margin-top: 60px;
+                margin-top: 0;
             }
 
-            .hero-slide {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-            }
-
-            /* Image container with gradient border */
             .hero-background {
                 position: absolute;
                 top: 0;
                 right: 0;
                 width: 40%;
                 height: 100%;
-                background-image: url('images/events_hero_image.jpg');
+                background-image: url('images/kathakali_with_back_light_hero_ai.jpg');
                 background-size: cover;
                 background-position: center;
                 overflow: hidden;
@@ -795,184 +784,81 @@
                     rgba(0, 0, 0, 0) 100%);
             }
 
-            .hero-background::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(
-                    90deg,
-                    rgba(0, 0, 0, 0) 0%,
-                    rgba(0, 0, 0, 0) 60%,
-                    rgba(0, 0, 0, 0.1) 80%,
-                    rgba(0, 0, 0, 0.3) 100%
-                );
-                z-index: 1;
-            }
-
-            .hero-background::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(
-                    to bottom,
-                    rgba(0, 0, 0, 0.2) 0%,
-                    rgba(0, 0, 0, 0) 50%,
-                    rgba(0, 0, 0, 0.2) 100%
-                );
-                z-index: 2;
-            }
-
-            .hero-background img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                position: relative;
-                z-index: 0;
-            }
-
-            /* Gradient overlay */
-            .hero-overlay {
-                position: absolute;
-                top: -20px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(
-                    90deg,
-                    rgba(0, 0, 0, 0.7) 0%,
-                    rgba(0, 0, 0, 0.5) 50%,
-                    rgba(0, 0, 0, 0.3) 100%
-                );
-                z-index: 1;
-                padding-top: 20px;
-            }
-
             .hero-content {
-                max-width: 1000px;
-                padding: 0 15px;
                 position: relative;
-                z-index: 2;
+                z-index: 3;
+                padding: 0 20px;
+                max-width: 1200px;
+                margin: 0 auto;
                 display: flex;
                 align-items: center;
-                gap: 40px;
+                height: 100%;
             }
 
-            .hero-logo {
+            .hero-mcafee-logo {
                 width: 180px;
                 height: auto;
-                margin-right: 40px;
-                opacity: 0.9;
+                margin-left: 0;
+                opacity: 0.6;
                 transition: opacity 0.3s ease;
                 filter: brightness(1.1) contrast(0.9);
                 mix-blend-mode: screen;
-            }
-
-            .hero-logo:hover {
-                opacity: 1;
             }
 
             .hero-title {
                 font-size: 32px;
                 line-height: 1.4;
                 margin-bottom: 15px;
-                color: var(--primary-color);
+                color: white;
                 text-align: left;
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                 max-width: 600px;
             }
 
-            .hero-subtitle {
-                font-size: 20px;
-                line-height: 1.5;
-                margin-bottom: 30px;
-            }
-
-            /* Black overlay at bottom */
-            .hero-section::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 25%;
-                background: #000;
-                z-index: 1;
-            }
-
-            @media (max-width: 991px) {
-                .hero-background {
-                    width: 50%;
-                }
-            }
-
-            @media (max-width: 767px) {
+            @media (max-width: 768px) {
                 .hero-section {
-                    height: 60vh;
-                    margin-top: 50px;
+                    height: 50vh;
+                    margin-top: 0;
+                    padding-top: 0;
                 }
 
                 .hero-content {
-                    flex-direction: row;
-                    gap: 20px;
-                    padding: 20px 15px;
-                    align-items: center;
-                    margin-top: 20px;
-                }
-
-                .hero-logo {
-                    width: 140px;
-                    margin-right: 20px;
-                }
-
-                .hero-title {
-                    font-size: 24px;
-                    line-height: 1.4;
-                    margin-bottom: 15px;
-                    max-width: 100%;
-                    padding-bottom: 20px;
+                    padding-top: 60px;
                 }
 
                 .hero-background {
                     width: 100%;
                     height: 100%;
-                    mask-image: radial-gradient(circle at 100% 0%,
-                        rgba(0, 0, 0, 0.8) 0%,
-                        rgba(0, 0, 0, 0.6) 60%,
-                        rgba(0, 0, 0, 0) 100%);
-                    -webkit-mask-image: radial-gradient(circle at 100% 0%,
-                        rgba(0, 0, 0, 0.8) 0%,
-                        rgba(0, 0, 0, 0.6) 60%,
-                        rgba(0, 0, 0, 0) 100%);
+                    opacity: 0.7;
+                    top: 0;
                 }
 
                 .hero-overlay {
                     background: linear-gradient(
-                        90deg,
-                        rgba(0, 0, 0, 0.85) 0%,
-                        rgba(0, 0, 0, 0.75) 50%,
-                        rgba(0, 0, 0, 0.6) 100%
+                        180deg,
+                        rgba(0, 0, 0, 0.4) 0%,
+                        rgba(0, 0, 0, 0.6) 50%,
+                        rgba(0, 0, 0, 0.8) 100%
                     );
-                }
-            }
-
-            @media (max-width: 480px) {
-                .hero-section {
-                    height: 70vh;
                 }
 
                 .hero-title {
-                    font-size: 20px;
+                    font-size: 28px;
+                    line-height: 1.4;
+                    margin: 0;
+                    padding: 0 15px;
                 }
 
-                .hero-logo {
+                .hero-title span {
+                    font-size: 24px;
+                    display: block;
+                    margin-top: 15px;
+                    color: #ffce59;
+                }
+
+                .hero-mcafee-logo {
                     width: 120px;
-                    margin-right: 15px;
+                    margin-bottom: 20px;
                 }
             }
 
@@ -1232,17 +1118,11 @@
 
         <!-- Hero Section -->
         <section class="hero-section">
-            <div class="hero-slide">
-                <div class="hero-background"></div>
-                <div class="hero-overlay"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <img src="images/mcefee_logo_black_border_transparent.png" alt="MCEFEE Logo" class="hero-logo">
-                        <div>
-                            <h1 class="hero-title">Malayali Cultural Exchange Foundation<br>for Education and Events</h1>
-                        </div>
-                    </div>
-                </div>
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img src="images/mcefee_logo_black_border_transparent.png" alt="MCEFEE Logo" class="hero-mcafee-logo">
+                <h1 class="hero-title">Connecting Cultures, Empowering Generations – <span style="color: #ffce59;">Celebrating Malayali Roots in the USA</span></h1>
             </div>
         </section>
 
@@ -1256,33 +1136,18 @@
                             <h3>Exciting events & announcements</h3>
                         </div>
 
-                        <!-- Event Item 1 -->
+                        <!-- New Event Item -->
                         <div class="event-item">
                             <div class="event-image">
-                                <img src="images/joint_mudra.jpeg" alt="Joint Mudra Performance">
+                                <img src="images/spark_kerala_event_2025.jpeg" alt="Spirit of Kerala 2025">
                             </div>
                             <div class="event-content">
-                                <h5 class="event-title">Kerala Classical Dance Performance</h5>
-                                <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
+                                <h5 class="event-title">SPARK OF KERALA</h5>
+                                <div class="event-address">New Jersey Convention Center, NJ, United States</div>
                             </div>
                             <div class="event-date">
-                                <div class="event-time">8 <span>pm</span></div>
-                                <div>Jan. 08 / 26</div>
-                            </div>
-                        </div>
-
-                        <!-- Event Item 2 -->
-                        <div class="event-item">
-                            <div class="event-image">
-                                <img src="images/kalari_jump.jpeg" alt="Kalaripayattu Performance">
-                            </div>
-                            <div class="event-content">
-                                <h5 class="event-title">Kalaripayattu Demonstration</h5>
-                                <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
-                            </div>
-                            <div class="event-date">
-                                <div class="event-time">10 <span>pm</span></div>
-                                <div>Jan. 10 / 26</div>
+                                <div class="event-time">2025</div>
+                                <div>AUG-SEP</div>
                             </div>
                         </div>
 

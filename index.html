@@ -408,52 +408,48 @@
                 }
 
                 .event-item {
-                    display: flex;
+                    width: 100%;
                     flex-direction: row;
-                    padding: 15px;
                     margin-bottom: 20px;
-                    background: white;
+                    padding: 15px;
                     border-radius: 10px;
-                    overflow: hidden;
-                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 }
 
                 .event-image {
-                    width: 120px;
-                    height: auto;
-                    padding-left: 15px;
+                    width: 100%;
+                    height: 250px;
                     margin: 0;
-                    border-radius: 0;
+                    padding: 0;
+                    border-radius: 10px 10px 0 0;
+                    overflow: hidden;
                 }
 
                 .event-image img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    object-position: center;
                 }
 
                 .event-content {
                     flex: 1;
                     padding: 0 15px;
-                    text-align: left;
                 }
 
                 .event-title {
                     font-size: 16px;
-                    margin-bottom: 5px;
+                    margin-bottom: 8px;
                 }
 
                 .event-address {
-                    font-size: 13px;
+                    font-size: 14px;
                 }
 
                 .event-date {
-                    padding: 10px;
-                    width: auto;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
+                    min-width: auto;
+                    padding: 0;
+                    background: transparent;
                 }
 
                 .event-time {
@@ -1097,6 +1093,10 @@
             /* Team Section */
             .team-section {
                 padding: 40px 0;
+            }
+
+            .team-section .section-title-wrapper {
+                margin-bottom: 40px;
             }
 
             .team-grid {
@@ -2186,52 +2186,73 @@
 
             @media (max-width: 768px) {
                 .event-item {
-                    display: flex;
+                    width: 100%;
                     flex-direction: row;
-                    padding: 15px;
                     margin-bottom: 20px;
-                    background: white;
+                    padding: 15px;
                     border-radius: 10px;
-                    overflow: hidden;
-                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 }
 
                 .event-image {
-                    width: 120px;
-                    height: auto;
-                    padding-left: 15px;
+                    width: 100px;
+                    height: 100px;
+                    min-width: 100px;
                     margin: 0;
-                    border-radius: 0;
+                    padding: 0;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
 
                 .event-image img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    object-position: center top;
                 }
 
                 .event-content {
                     flex: 1;
                     padding: 0 15px;
-                    text-align: left;
                 }
 
                 .event-title {
                     font-size: 16px;
-                    margin-bottom: 5px;
+                    margin-bottom: 8px;
+                }
+
+                .event-address {
+                    font-size: 14px;
+                }
+
+                .event-date {
+                    min-width: auto;
+                    padding: 0;
+                    background: transparent;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .event-image {
+                    width: 90px;
+                    height: 90px;
+                    min-width: 90px;
+                }
+
+                .event-content {
+                    padding: 0 12px;
+                }
+
+                .event-title {
+                    font-size: 15px;
+                    margin-bottom: 6px;
                 }
 
                 .event-address {
                     font-size: 13px;
-                }
-
-                .event-date {
-                    padding: 10px;
-                    width: auto;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
                 }
             }
 
@@ -2503,7 +2524,7 @@
 
                 .events-container {
                     display: grid;
-                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: 1fr;
                     gap: 15px;
                     padding: 15px;
                 }
@@ -2520,7 +2541,7 @@
 
                 .event-image {
                     width: 100%;
-                    height: 150px;
+                    height: 200px;
                     margin: 0;
                     padding: 0;
                     border-radius: 10px 10px 0 0;
@@ -2557,23 +2578,12 @@
                 .event-date {
                     width: 100%;
                     padding: 10px 15px;
-                    border-top: none;  /* Removed top border */
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-start;
                     align-items: center;
                     background: transparent;
-                    position: relative;
-                }
-
-                .event-date::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    left: 15px;
-                    right: 15px;
-                    height: 1px;
-                    background: rgba(0, 0, 0, 0.1);
                 }
 
                 .event-time {
@@ -2584,25 +2594,20 @@
 
                 /* Increase spacing above See all events button */
                 .button[href="events.html"] {
-                    margin-top: 40px !important;  /* Added important to override any existing styles */
+                    margin-top: 30px;
                     margin-bottom: 30px;
                     display: inline-block;
                 }
 
                 .main-event {
                     margin-top: 40px;
+                    padding: 25px;
                 }
             }
 
             @media (max-width: 480px) {
-                .events-container {
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 10px;
-                    padding: 10px;
-                }
-
                 .event-image {
-                    height: 120px;
+                    height: 180px;
                 }
 
                 .event-content {
@@ -2610,7 +2615,7 @@
                 }
 
                 .event-title {
-                    font-size: 14px;
+                    font-size: 15px;
                     margin-bottom: 6px;
                 }
 
@@ -2627,13 +2632,14 @@
                     font-size: 14px;
                 }
 
-                /* Maintain button spacing on smaller screens */
                 .button[href="events.html"] {
-                    margin-top: 30px !important;
+                    margin-top: 25px;
+                    margin-bottom: 25px;
                 }
 
                 .main-event {
                     margin-top: 30px;
+                    padding: 20px;
                 }
             }
 
@@ -2669,6 +2675,17 @@
                     background-size: cover;
                     padding: 0;
                 }
+            }
+
+            /* Main event box spacing fix */
+            .events-section {
+                padding: 40px 0 80px;  /* Increased bottom padding */
+                margin-bottom: 40px;   /* Added margin bottom */
+            }
+
+            .main-event {
+                margin-bottom: 0;      /* Remove bottom margin from main event */
+                margin-top: 40px;      /* Add top margin instead */
             }
         </style>
 
@@ -2903,10 +2920,6 @@
                             <span class="section-subtitle">Team</span>
                             <h3>Meet our the best volunteers team</h3>
                         </div>
-                        <div class="counter-box">
-                            <div class="counter">500+</div>
-                            <div class="counter-title">Team members</div>
-                        </div>
                     </div>
                 </div>
 
@@ -3029,37 +3042,22 @@
                             <h3>Exciting events & announcements</h3>
                         </div>
 
-                        <!-- Event Item 1 -->
+                        <!-- New Event Item -->
                         <div class="event-item">
                             <div class="event-image">
-                                <img src="images/joint_mudra.jpeg" alt="Joint Mudra Performance">
+                                <img src="images/spark_kerala_event_2025.jpeg" alt="Spirit of Kerala 2025">
                             </div>
                             <div class="event-content">
-                                <h5 class="event-title">Kerala Classical Dance Performance</h5>
-                                <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
+                                <h5 class="event-title">SPARK OF KERALA</h5>
+                                <div class="event-address">New Jersey Convention Center, NJ, United States</div>
                             </div>
                             <div class="event-date">
-                                <div class="event-time">8 <span>pm</span></div>
-                                <div>Jan. 08 / 26</div>
+                                <div class="event-time">2025</div>
+                                <div>AUG-SEP</div>
                             </div>
                         </div>
 
-                        <!-- Event Item 2 -->
-                        <div class="event-item">
-                            <div class="event-image">
-                                <img src="images/kalari_jump.jpeg" alt="Kalaripayattu Performance">
-                            </div>
-                            <div class="event-content">
-                                <h5 class="event-title">Kalaripayattu Demonstration</h5>
-                                <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
-                            </div>
-                            <div class="event-date">
-                                <div class="event-time">10 <span>pm</span></div>
-                                <div>Jan. 10 / 26</div>
-                            </div>
-                        </div>
-
-                        <!-- Event Item 3 -->
+                        <!-- Existing Event Item -->
                         <div class="event-item">
                             <div class="event-image">
                                 <img src="images/lady_dance.jpeg" alt="Classical Dance Performance">
@@ -3102,7 +3100,7 @@
         </section>
 
         <!-- Partners Section -->
-        <section class="partners-section">
+        <!-- <section class="partners-section">
             <div class="container">
                 <div class="partners-grid">
                     <div class="partner-item">
@@ -3122,10 +3120,10 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- CTA Section -->
-        <section class="cta-section">
+        <!-- <section class="cta-section">
             <div class="container">
                 <div class="row" style="align-items: center;">
                     <div class="col-12 col-md-6">
@@ -3138,7 +3136,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
          <footer>
             <div class="prefooter">
