@@ -2735,6 +2735,56 @@
                 margin-bottom: 0;      /* Remove bottom margin from main event */
                 margin-top: 40px;      /* Add top margin instead */
             }
+
+            /* Updated Main Event Styles */
+            .main-event {
+                background: var(--primary-color);
+                border-radius: 20px;
+                padding: 30px;
+                color: white;
+                height: 80%;
+                margin-bottom: 30px;
+            }
+
+            @media (max-width: 768px) {
+                .main-event {
+                    height: auto;
+                    padding: 25px;
+                }
+            }
+
+            /* Ticker Section */
+            .ticker-section {
+                background: var(--primary-color);
+                color: white;
+                padding: 10px 0;
+                overflow: hidden;
+            }
+
+            .ticker-item {
+                padding: 0 20px;
+                white-space: nowrap;
+            }
+
+            /* Event Item Styles */
+            .event-content {
+                padding: 15px 20px;
+            }
+
+            .event-address {
+                font-size: 14px;
+                line-height: 1.6;
+                color: #666;
+                margin-bottom: 10px;
+                padding-right: 15px;
+            }
+
+            @media (max-width: 768px) {
+                .event-address {
+                    font-size: 13px;
+                    padding-right: 10px;
+                }
+            }
         </style>
 
         <!-- Google Fonts -->
@@ -2884,9 +2934,9 @@
         <!-- Ticker/Banner Section -->
         <section class="ticker-section">
             <div class="ticker">
-                <div class="ticker-item">Spark of Kerala by MCEFEE – A vibrant showcase of performance, arts, and rhythm celebrating the rich cultural heritage of Kerala!</div>
-                <div class="ticker-item">Spark of Kerala by MCEFEE – A vibrant showcase of performance, arts, and rhythm celebrating the rich cultural heritage of Kerala!</div>
-                <div class="ticker-item">Spark of Kerala by MCEFEE – A vibrant showcase of performance, arts, and rhythm celebrating the rich cultural heritage of Kerala!</div>
+                <div class="ticker-item">Culture is the thread to thrive and ties generations to their roots !</div>
+                <div class="ticker-item">Culture is the thread to thrive and ties generations to their roots !</div>
+                <div class="ticker-item">Culture is the thread to thrive and ties generations to their roots !</div>
             </div>
         </section>
 
@@ -2972,6 +3022,21 @@
                 </div>
 
                 <div class="team-grid">
+                    <!-- Head Team Member -->
+                    <div class="team-item">
+                        <div class="team-image">
+                            <img src="images/team_members/shaji_varghese.jpeg" alt="Shaji Varghese">
+                            <div class="team-overlay">
+                                <ul class="team-socials">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5 class="team-title">Shaji Varghese</h5>
+                            <div class="team-position">Head Volunteer</div>
+                        </div>
+                    </div>
                     <!-- Team Member 1 -->
                     <div class="team-item">
                         <div class="team-image">
@@ -3016,7 +3081,7 @@
                         </div>
                         <div class="team-content">
                             <h5 class="team-title">Latha Krishnan</h5>
-                            <div class="team-position">Head Volunteer</div>
+                            <div class="team-position"> Volunteer</div>
                         </div>
                     </div>
 
@@ -3035,6 +3100,8 @@
                             <div class="team-position">Volunteer</div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </section>
@@ -3093,11 +3160,11 @@
                         <!-- New Event Item -->
                         <div class="event-item">
                             <div class="event-image">
-                                <img src="images/spark_kerala_event_2025.jpeg" alt="Spirit of Kerala 2025">
+                                <img src="images/spark_kerala_event_2025.jpeg" alt="SPARK OF KERALA 2025">
                             </div>
                             <div class="event-content">
                                 <h5 class="event-title">SPARK OF KERALA</h5>
-                                <div class="event-address">New Jersey Convention Center, NJ, United States</div>
+                                <div class="event-address">Celebrates the vibrant culture, art, and heritage of Kerala across the USA</div>
                             </div>
                             <div class="event-date">
                                 <div class="event-time">2025</div>
@@ -3108,15 +3175,15 @@
                         <!-- Existing Event Item -->
                         <div class="event-item">
                             <div class="event-image">
-                                <img src="images/lady_dance.jpeg" alt="Classical Dance Performance">
+                                <img src="images/Karnatic_Music_Festival.jpeg" alt="Karnatic Music Festival">
                             </div>
                             <div class="event-content">
-                                <h5 class="event-title">Kerala Cultural Heritage Showcase</h5>
-                                <div class="event-address">Manhattan Club, 350 5th Ave, New York, NY, United States</div>
+                                <h5 class="event-title">Karnatic Music Festival</h5>
+                                <div class="event-address">A Tribute to Kerala's Classical Melodies Across the USA</div>
                             </div>
                             <div class="event-date">
-                                <div class="event-time">6 <span>pm</span></div>
-                                <div>Jan. 06 / 26</div>
+                                <div class="event-time">2025</div>
+                                <div>OCT-NOV</div>
                             </div>
                         </div>
 
