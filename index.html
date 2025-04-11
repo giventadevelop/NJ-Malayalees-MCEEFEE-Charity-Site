@@ -129,6 +129,7 @@
                 width: 100%;
                 z-index: 1000;
                 background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(5px);
             }
 
             .header-transparent .header-inner {
@@ -274,19 +275,29 @@
                 .hero-section {
                     height: 100vh;
                     margin-top: 0;
-                    padding-top: 0;
+                    padding-top: 120px; /* Increased padding for mobile */
                     position: relative;
                 }
 
                 .hero-content {
-                    padding-top: 60px;
+                    padding-top: 100px; /* Increased padding for content */
+                    margin-top: 20px; /* Added margin to push content down */
                 }
 
                 .hero-background {
                     width: 100%;
-                    height: 100%;
-                    opacity: 0.7;
-                    top: 0;
+                    height: 50%;
+                    top: 100px; /* Pushed further down to avoid header overlap */
+                    right: 0;
+                    opacity: 0.6;
+                    mask-image: radial-gradient(circle at 100% 0%,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 1) 60%,
+                        rgba(0, 0, 0, 0) 100%);
+                    -webkit-mask-image: radial-gradient(circle at 100% 0%,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 1) 60%,
+                        rgba(0, 0, 0, 0) 100%);
                 }
 
                 .hero-overlay {
@@ -315,10 +326,6 @@
                 .hero-mcafee-logo {
                     width: 120px;
                     margin-bottom: 20px;
-                }
-
-                .mobile-menu {
-                    padding-top: 60px;
                 }
 
                 h1 {
@@ -460,12 +467,28 @@
             }
 
             @media (max-width: 480px) {
+                .hero-section {
+                    padding-top: 110px; /* Slightly reduced padding for smaller screens */
+                }
+
+                .hero-background {
+                    top: 90px; /* Adjusted for smaller screens */
+                }
+
+                .hero-content {
+                    padding-top: 90px; /* Adjusted for smaller screens */
+                }
+
                 .hero-title {
                     font-size: 24px;
                 }
 
                 .hero-title span {
                     font-size: 20px;
+                }
+
+                .hero-mcafee-logo {
+                    width: 100px;
                 }
 
                 h1 {
@@ -593,6 +616,7 @@
                 overflow: hidden;
                 background-color: #000;
                 margin-top: 0;
+                padding-top: 120px; /* Increased padding to push content down */
             }
 
             .hero-slide {
@@ -608,14 +632,15 @@
             /* Image container with gradient border */
             .hero-background {
                 position: absolute;
-                top: 0;
+                top: 80px; /* Push the background image down */
                 right: 0;
                 width: 40%;
-                height: 100%;
-                background-image: url('images/kathakali_with_back_light_hero_ai.jpeg');
+                height: 80%;
+                background-image: url('images/kathakali_with_back_light_hero_ai.png');
                 background-size: cover;
                 background-position: center;
                 overflow: hidden;
+                opacity: 0.7;
                 mask-image: radial-gradient(circle at 100% 50%,
                     rgba(0, 0, 0, 1) 0%,
                     rgba(0, 0, 0, 1) 60%,
@@ -635,10 +660,10 @@
                 bottom: 0;
                 background: linear-gradient(
                     90deg,
-                    rgba(0, 0, 0, 0) 0%,
-                    rgba(0, 0, 0, 0) 60%,
-                    rgba(0, 0, 0, 0.1) 80%,
-                    rgba(0, 0, 0, 0.3) 100%
+                    rgba(0, 0, 0, 0.3) 0%,
+                    rgba(0, 0, 0, 0.3) 60%,
+                    rgba(0, 0, 0, 0.5) 80%,
+                    rgba(0, 0, 0, 0.7) 100%
                 );
                 z-index: 1;
             }
@@ -693,6 +718,7 @@
                 display: flex;
                 align-items: center;
                 height: 100%;
+                margin-top: 20px; /* Add margin to push content down */
             }
 
             .hero-title {
@@ -732,7 +758,7 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                height: 25%;
+                /* height: 25%; */
                 background: #000;
                 z-index: 1;
             }
@@ -1235,7 +1261,7 @@
                 width: 40%;
                 background-size: cover;
                 background-position: center;
-                background-image: url('images/kathakali_with_back_light_hero_ai.jpg');
+                background-image: url('images/kathakali_with_back_light_hero_ai.png');
                 border-radius: 10px 0 0 10px;
                 position: relative;
             }
@@ -2281,8 +2307,9 @@
                 .hero-background {
                     width: 100%;
                     height: 50%;
-                    top: 0;
+                    /* top: 0; */
                     right: 0;
+                    opacity: 0.6; /* Slightly more faded on mobile */
                     mask-image: radial-gradient(circle at 100% 0%,
                         rgba(0, 0, 0, 1) 0%,
                         rgba(0, 0, 0, 1) 60%,
