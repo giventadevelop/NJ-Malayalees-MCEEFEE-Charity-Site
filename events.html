@@ -757,25 +757,25 @@
 
             /* Hero Section */
             .hero-section {
-                height: 70vh;
+                height: 33vh;
                 position: relative;
                 overflow: hidden;
                 background-color: #000;
                 margin-top: 0;
+                padding-top: 50px;
             }
 
             .hero-background {
                 position: absolute;
-                top: 0;
-                right: 0;
-                width: 40%;
-                height: 100%;
                 top: 80px;
-                opacity: 0.4;
+                right: 0;
+                width: 35%;
+                height: 75%;
                 background-image: url('images/kathakali_with_back_light_hero_ai.png');
                 background-size: cover;
                 background-position: center;
                 overflow: hidden;
+                opacity: 0.7;
                 mask-image: radial-gradient(circle at 100% 50%,
                     rgba(0, 0, 0, 1) 0%,
                     rgba(0, 0, 0, 1) 60%,
@@ -786,6 +786,55 @@
                     rgba(0, 0, 0, 0) 100%);
             }
 
+            .hero-background::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.3) 0%,
+                    rgba(0, 0, 0, 0.3) 60%,
+                    rgba(0, 0, 0, 0.5) 80%,
+                    rgba(0, 0, 0, 0.7) 100%
+                );
+                z-index: 1;
+            }
+
+            .hero-background::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.2) 0%,
+                    rgba(0, 0, 0, 0) 50%,
+                    rgba(0, 0, 0, 0.2) 100%
+                );
+                z-index: 2;
+            }
+
+            .hero-overlay {
+                position: absolute;
+                top: -20px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.7) 0%,
+                    rgba(0, 0, 0, 0.5) 50%,
+                    rgba(0, 0, 0, 0.3) 100%
+                );
+                z-index: 1;
+                padding-top: 20px;
+            }
+
             .hero-content {
                 position: relative;
                 z-index: 3;
@@ -793,8 +842,12 @@
                 max-width: 1200px;
                 margin: 0 auto;
                 display: flex;
+                flex-direction: row;
                 align-items: center;
+                justify-content: flex-start;
                 height: 100%;
+                text-align: left;
+                gap: 30px;
             }
 
             .hero-mcafee-logo {
@@ -808,59 +861,80 @@
             }
 
             .hero-title {
-                font-size: 32px;
+                font-size: 24px;
                 line-height: 1.4;
-                margin-bottom: 15px;
+                margin: 0;
                 color: white;
                 text-align: left;
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                 max-width: 600px;
+                flex-grow: 1;
             }
 
-            @media (max-width: 768px) {
-                .hero-section {
-                    height: 50vh;
-                    margin-top: 0;
-                    padding-top: 0;
-                }
+            .hero-title span {
+                font-size: 20px;
+                display: block;
+                margin-top: 15px;
+                color: #ffce59;
+            }
 
-                .hero-content {
-                    padding-top: 60px;
+            @media (max-width: 767px) {
+                .hero-section {
+                    height: 100vh;
+                    padding-top: 120px;
                 }
 
                 .hero-background {
-                width: 100%;
-                    height: 80%;
-                    opacity: 0.5;
-                    top: 20;
+                    width: 100%;
+                    height: 50%;
+                    top: 100px;
+                    right: 0;
+                    opacity: 0.6;
+                    mask-image: radial-gradient(circle at 100% 0%,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 1) 60%,
+                        rgba(0, 0, 0, 0) 100%);
+                    -webkit-mask-image: radial-gradient(circle at 100% 0%,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 1) 60%,
+                        rgba(0, 0, 0, 0) 100%);
                 }
 
-                .hero-overlay {
-                    background: linear-gradient(
-                        180deg,
-                        rgba(0, 0, 0, 0.4) 0%,
-                        rgba(0, 0, 0, 0.6) 50%,
-                        rgba(0, 0, 0, 0.8) 100%
-                    );
+                .hero-content {
+                    padding-top: 100px;
+                    margin-top: 20px;
                 }
 
                 .hero-title {
-                    font-size: 28px;
-                    line-height: 1.4;
-                    margin: 0;
-                    padding: 0 15px;
+                    font-size: 20px;
+                    text-align: left;
+                    padding: 0;
                 }
 
                 .hero-title span {
-                    font-size: 24px;
-                    display: block;
-                    margin-top: 15px;
-                    color: #ffce59;
+                    font-size: 18px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .hero-section {
+                    padding-top: 110px;
                 }
 
-                .hero-mcafee-logo {
-                    width: 120px;
-                    margin-bottom: 20px;
+                .hero-background {
+                    top: 90px;
+                }
+
+                .hero-content {
+                    padding-top: 90px;
+                }
+
+                .hero-title {
+                    font-size: 18px;
+                }
+
+                .hero-title span {
+                    font-size: 16px;
                 }
             }
 
@@ -924,7 +998,7 @@
             .section-subtitle {
                 font-size: 14px;
                 color: var(--primary-color);
-                margin-bottom: 10px;
+                margin-bottom: 5px;
                 display: inline-block;
                 text-transform: uppercase;
                 position: relative;
@@ -997,8 +1071,40 @@
             }
 
             .events-section {
-                padding-top: 100px;
-                padding-bottom: 100px;
+                padding-top: 30px;
+                padding-bottom: 60px;
+            }
+
+            .section-title-wrapper {
+                margin-bottom: 30px;
+            }
+
+            .section-title-wrapper h3 {
+                font-size: 28px;
+                line-height: 1.2;
+                margin-bottom: 25px;
+            }
+
+            @media (max-width: 768px) {
+                .events-section {
+                    padding-top: 20px;
+                    padding-bottom: 40px;
+                }
+
+                .section-title-wrapper {
+                    margin-bottom: 25px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .events-section {
+                    padding-top: 15px;
+                    padding-bottom: 30px;
+                }
+
+                .section-title-wrapper {
+                    margin-bottom: 20px;
+                }
             }
 
             .events-container {
