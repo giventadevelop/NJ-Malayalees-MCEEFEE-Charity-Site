@@ -611,12 +611,12 @@
 
             /* Hero Section */
             .hero-section {
-                height: 60vh;
+                height: 33vh; /* Increased from 30vh to 33vh (10% increase) */
                 position: relative;
                 overflow: hidden;
                 background-color: #000;
                 margin-top: 0;
-                padding-top: 120px; /* Increased padding to push content down */
+                padding-top: 50px;
             }
 
             .hero-slide {
@@ -632,10 +632,10 @@
             /* Image container with gradient border */
             .hero-background {
                 position: absolute;
-                top: 80px; /* Push the background image down */
+                top: 80px;
                 right: 0;
-                width: 40%;
-                height: 80%;
+                width: 35%; /* Reduced from 40% to 35% */
+                height: 75%; /* Reduced from 80% to 75% */
                 background-image: url('images/kathakali_with_back_light_hero_ai.png');
                 background-size: cover;
                 background-position: center;
@@ -716,39 +716,84 @@
                 max-width: 1200px;
                 margin: 0 auto;
                 display: flex;
+                flex-direction: row;
                 align-items: center;
+                justify-content: flex-start;
                 height: 100%;
-                margin-top: 20px; /* Add margin to push content down */
+                text-align: left;
+                gap: 30px;
+            }
+
+            .hero-mcafee-logo {
+                width: 150px;
+                height: auto;
+                margin: 0;
+                opacity: 0.6;
+                transition: opacity 0.3s ease;
+                filter: brightness(1.1) contrast(0.9);
+                mix-blend-mode: screen;
+                flex-shrink: 0;
             }
 
             .hero-title {
-                font-size: 32px;
+                font-size: 24px; /* Reduced from 28px */
                 line-height: 1.4;
-                margin-bottom: 15px;
+                margin: 0;
                 color: white;
                 text-align: left;
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                 max-width: 600px;
+                flex-grow: 1;
+            }
+
+            @media (max-width: 767px) {
+                .hero-content {
+                    flex-direction: row;
+                    align-items: center;
+                    text-align: left;
+                    padding: 20px;
+                    gap: 20px;
+                }
+
+                .hero-title {
+                    font-size: 20px; /* Reduced from 24px */
+                    text-align: left;
+                    padding: 0;
+                }
+
+                .hero-mcafee-logo {
+                    width: 100px;
+                    margin: 0;
+                }
+
+                .hero-title span {
+                    font-size: 18px; /* Reduced from 20px */
+                }
+            }
+
+            @media (max-width: 480px) {
+                .hero-content {
+                    padding: 15px;
+                    gap: 15px;
+                }
+
+                .hero-title {
+                    font-size: 18px; /* Reduced from 20px */
+                }
+
+                .hero-title span {
+                    font-size: 16px; /* Reduced from 18px */
+                }
+
+                .hero-mcafee-logo {
+                    width: 90px;
+                }
             }
 
             .hero-subtitle {
                 font-size: 20px;
                 line-height: 1.5;
                 margin-bottom: 30px;
-            }
-
-            .hero-mcafee-logo {
-                width: 180px;
-                height: auto;
-                margin-left: 0;
-                opacity: 0.6;
-                transition: opacity 0.3s ease;
-                filter: brightness(1.1) contrast(0.9);
-                mix-blend-mode: screen;
-            }
-
-            .hero-mcafee-logo:hover {
-                opacity: 0.8;
             }
 
             /* Black overlay at bottom */
@@ -775,12 +820,12 @@
 
             .feature-box {
                 flex: 1;
-                padding: 30px;  /* Increased padding for better spacing */
+                padding: 12px;  /* Reduced from 15px */
+                min-height: 100px;  /* Reduced from 120px */
                 position: relative;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                min-height: 120px;
                 background-size: cover;
                 background-position: center;
                 overflow: hidden;
@@ -885,10 +930,10 @@
 
             .feature-box h4 {
                 color: white;
-                font-size: 22px;  /* Consistent font size */
-                line-height: 1.4;
+                font-size: 16px;  /* Reduced from 18px */
+                line-height: 1.3;
                 font-weight: 400;
-                margin: 0 0 20px 0;
+                margin: 0 0 10px 0;  /* Reduced from 15px */
                 max-width: 90%;
                 position: relative;
                 z-index: 2;
@@ -897,16 +942,16 @@
             }
 
             .feature-box .link-text {
-                color: #ffce59;  /* Matching the hero section yellow */
-                font-size: 16px;
-                font-weight: 600;  /* Made bolder */
+                color: #ffce59;
+                font-size: 13px;  /* Reduced from 14px */
+                font-weight: 600;
                 text-decoration: none;
                 position: relative;
                 display: inline-block;
-                padding-bottom: 5px;
-                opacity: 1;  /* Ensure full opacity */
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);  /* Added subtle shadow for better visibility */
-                z-index: 2;  /* Ensure it's above the overlay */
+                padding-bottom: 2px;  /* Reduced from 3px */
+                opacity: 1;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+                z-index: 2;
             }
 
             .feature-box .link-text::after {
@@ -968,37 +1013,33 @@
                 color: #0A84FF;
             }
 
+            @media (min-width: 768px) {
+                .feature-box:nth-child(1) {
+                    background-size: 35%;
+                    min-height: 100px;  /* Desktop height */
+                }
+            }
+
             @media (max-width: 991px) {
                 .feature-box {
-                    padding: 30px;
-                    min-height: 200px;
+                    padding: 15px;
+                    min-height: 120px;  /* Tablet height */
                 }
 
                 .feature-box h4 {
-                    font-size: 20px;
+                    font-size: 14px;
                     max-width: 100%;
-                }
-
-                .feature-box .button {
-                    padding: 8px 16px;
-                    font-size: 12px;
                 }
             }
 
             @media (max-width: 767px) {
-                .feature-box h4 {
-                    font-size: 28px;
-                }
-            }
-
-            @media (max-width: 768px) {
                 .feature-box {
-                    min-height: 100px;
-                    padding: 20px;
+                    min-height: 120px;  /* Mobile height */
+                    padding: 10px;
                 }
 
                 .feature-box h4 {
-                    font-size: 18px;
+                    font-size: 14px;
                 }
             }
 
@@ -2028,57 +2069,37 @@
 
             /* What We Do Section Styles */
             .what-we-do {
-                padding: 40px 0;
+                padding: 15px 0;  /* Further reduced from 20px */
                 background: #fff;
             }
 
             .section-title-wrapper {
-                margin-bottom: 50px;
-                text-align: left;
-            }
-
-            .section-subtitle {
-                font-size: 14px;
-                color: var(--primary-color);
-                margin-bottom: 10px;
-                display: inline-block;
-                text-transform: uppercase;
-                position: relative;
-                padding-left: 50px;
-            }
-
-            .section-subtitle:before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 50%;
-                width: 40px;
-                height: 1px;
-                background-color: var(--primary-color);
+                margin-bottom: 20px;  /* Reduced from 30px */
             }
 
             .section-title-wrapper h3 {
+                font-size: 24px;  /* Reduced from 32px */
+                margin-bottom: 20px;
                 margin-left: 50px;
-                margin-top: 10px;
             }
 
             .services-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-                margin-top: 30px;
+                gap: 15px;  /* Reduced from 25px */
+                margin-top: 15px;  /* Reduced from 20px */
             }
 
             .service-item {
                 display: flex;
-                gap: 20px;
+                gap: 10px;  /* Reduced from 15px */
                 align-items: flex-start;
-                margin-bottom: 30px;
+                margin-bottom: 15px;  /* Reduced from 20px */
             }
 
             .service-icon {
-                width: 150px;
-                height: 150px;
+                width: 120px;
+                height: 120px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -2086,96 +2107,9 @@
             }
 
             .service-icon svg {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 display: block;
-            }
-
-            /* Mobile styles for service icons */
-            @media (max-width: 768px) {
-                .service-icon {
-                    width: 100px;
-                    height: 100px;
-                }
-
-                .service-icon svg {
-                    width: 40px;
-                    height: 40px;
-                }
-
-                /* Ensure fill colors are visible on mobile */
-                .dance-music svg {
-                    fill: #30D158 !important;
-                }
-
-                .art-craft svg {
-                    fill: #FF9500 !important;
-                }
-
-                .language-classes svg {
-                    fill: #0A84FF !important;
-                }
-
-                .cuisine-classes svg {
-                    fill: #FFD60A !important;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .service-icon {
-                    width: 80px;
-                    height: 80px;
-                }
-
-                .service-icon svg {
-                    width: 35px;
-                    height: 35px;
-                }
-            }
-
-            .service-content {
-                flex-grow: 1;
-            }
-
-            .service-content h4 {
-                font-size: 24px;
-                color: #333;
-                margin-bottom: 15px;
-                font-weight: 500;
-            }
-
-            .service-content p {
-                color: #666;
-                font-size: 16px;
-                line-height: 1.6;
-            }
-
-            .link-text {
-                color: var(--primary-color);
-                font-size: 16px;
-                font-weight: 500;
-                text-decoration: none;
-                position: relative;
-                display: inline-block;
-                padding-bottom: 5px;
-            }
-
-            .link-text::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background-color: var(--primary-color);
-                transform: scaleX(1);
-                transform-origin: left;
-                transition: transform 0.3s ease;
-            }
-
-            .link-text:hover::after {
-                transform: scaleX(0);
-                transform-origin: right;
             }
 
             /* Service Icons Colors */
@@ -2195,13 +2129,48 @@
                 fill: #FFD60A;  /* Yellow for cooking */
             }
 
+            .service-content {
+                flex-grow: 1;
+            }
+
+            .service-content h4 {
+                font-size: 20px;  /* Reduced from 24px */
+                color: #333;
+                margin-bottom: 10px;  /* Reduced from 15px */
+                font-weight: 500;
+            }
+
+            .service-content p {
+                color: #666;
+                font-size: 14px;  /* Reduced from 16px */
+                line-height: 1.5;
+            }
+
             @media (max-width: 768px) {
-                .services-grid {
-                    grid-template-columns: 1fr;
+                .section-title-wrapper h3 {
+                    font-size: 22px;
                 }
 
-                .section-heading {
-                    font-size: 36px;
+                .services-grid {
+                    gap: 12px;
+                }
+
+                .service-item {
+                    margin-bottom: 12px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .section-title-wrapper h3 {
+                    font-size: 20px;
+                }
+
+                .services-grid {
+                    gap: 10px;
+                }
+
+                .service-item {
+                    margin-bottom: 10px;
                 }
             }
 
@@ -2792,7 +2761,7 @@
             @media (min-width: 768px) {
                 .feature-box:nth-child(1) {
                     background-size: 70%;  /* Even smaller on desktop */
-                    min-height: 300px;  /* Maintain minimum height */
+                    min-height: 130px;  /* Maintain minimum height */
                 }
 
                 #story-section .about-us-container {
@@ -2896,6 +2865,76 @@
                     padding-right: 10px;
                 }
             }
+
+            @media (max-width: 768px) {
+                .section-title-wrapper h3 {
+                    font-size: 22px;
+                }
+
+                .services-grid {
+                    grid-template-columns: 1fr;
+                    gap: 12px;
+                }
+
+                .service-item {
+                    margin-bottom: 12px;
+                }
+
+                /* Ensure fill colors are visible on mobile */
+                .dance-music svg {
+                    fill: #30D158 !important;
+                }
+
+                .art-craft svg {
+                    fill: #FF9500 !important;
+                }
+
+                .language-classes svg {
+                    fill: #0A84FF !important;
+                }
+
+                .cuisine-classes svg {
+                    fill: #FFD60A !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .what-we-do {
+                    padding: 12px 0;
+                }
+
+                .section-title-wrapper h3 {
+                    font-size: 20px;
+                }
+
+                .services-grid {
+                    gap: 10px;
+                }
+
+                .service-item {
+                    margin-bottom: 5px;
+                }
+
+                .service-icon {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .service-icon svg {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .service-content h4 {
+                    font-size: 16px;
+                    margin-bottom: 6px;
+                }
+
+                .service-content p {
+                    font-size: 12px;
+                    line-height: 1.4;
+                }
+            }
         </style>
 
         <!-- Google Fonts -->
@@ -2980,7 +3019,7 @@
             <div class="container">
                 <div class="section-title-wrapper">
                     <span class="section-subtitle">What we do</span>
-                    <h3 style="font-size: 32px; margin-bottom: 30px; margin-left: 50px;">Cultural Workshops and Educational Events</h3>
+                    <h3 style="font-size: 25px; margin-bottom: 25px; margin-left: 50px;">Cultural Workshops and Educational Events</h3>
                 </div>
 
                 <div class="services-grid">
