@@ -1,0 +1,111 @@
+---
+description: How to size, crop, and lay out event poster/thumbnail images so they fit the event-card thumbnail column on index.html and events.html. Apply whenever adding or replacing an event image, or editing event-card markup/CSS.
+globs:
+  - "index.html"
+  - "events.html"
+  - "images/**"
+alwaysApply: false
+---
+
+# Event Card Thumbnail Images — Size & Layout Rules
+
+These rules govern every image used inside an `.event-item` card (Upcoming **and**
+Past events) in `index.html` and `events.html`. Following them means a new poster
+"just works" as a thumbnail with no per-card CSS overrides.
+
+## 1. How the thumbnail is displayed (do not fight this)
+
+The image lives in `.event-image > img` and is rendered with **`object-fit: cover`**.
+`cover` **fills the box and crops whatever doesn't fit** — it never letterboxes and
+never distorts. The visible box is **not** a fixed shape; it changes per breakpoint:
+
+| Breakpoint | `.event-image` box (W × H) | Box ratio | What `cover` crops |
+| --- | --- | --- | --- |
+| Desktop ≥ 769px | **150px** × card height (~180–280px) | ~0.55–0.83 (portrait) | a little off top/bottom |
+| events.html ≤ 768px | **90–110px** × card height | portrait | a little off top/bottom |
+| index.html ≤ 768px (stacked) | **full width (~345px)** × **180px** | ~1.9 (landscape) | **a lot off top & bottom** |
+
+> Because the same image is shown as a tall portrait on desktop **and** a short
+> landscape band on mobile, the only region guaranteed to always be visible is the
+> **center**. Design for the center.
+
+## 2. Required source-image specs
+
+- **Aspect ratio: 2:3 portrait (0.667).** This matches the reference past poster
+  `images/spark_kerala_event_2026_1.jpg` (1024 × 1536) and crops cleanly at every
+  breakpoint. Do not submit landscape or square posters as the card image — resize/
+  recompose them to 2:3 first (this is exactly the fix that made Spark & Veena work).
+- **Dimensions: 1000 × 1500 px** recommended (min **800 × 1200**, max **1200 × 1800**).
+  This is ~2× the largest display size (≈345px) so it stays crisp on retina screens.
+- **Format:** `.jpg` (quality ~80%) for photographic posters; `.png` only when the
+  art needs hard-edged text/logos or transparency. Use `.webp` if a matching
+  fallback exists.
+- **File size:** keep **under ~300 KB**. Compress before committing.
+- **Color space:** sRGB.
+
+## 3. Safe-area / layout rules (what goes *inside* the image)
+
+`cover` crops the edges, and crops the **top & bottom hardest** (mobile landscape
+band). So:
+
+- Keep all **critical content** — event title, headliner faces, date, sponsor
+  logos, contact info — inside the **central safe zone**:
+  - vertically: the **middle 60%** (leave the top 20% and bottom 20% expendable),
+  - horizontally: the **middle 90%**.
+- Put the **main subject / title in the dead center**, not near any edge.
+- Let the background **bleed to all four edges**; never rely on a border, frame, or
+  edge text being visible.
+- Avoid tiny print near edges (phone numbers, fine print) — it will be cropped on
+  mobile. Put that info in the card **text**, not baked into the image (see §5).
+
+## 4. CSS rules — keep parity with past events (no per-card overrides)
+
+- The card uses the shared rules only:
+  `.event-image { width:150px; flex-shrink:0 }` and
+  `.event-image img { width:100%; height:100%; object-fit:cover }`.
+- **Do NOT** add `.event-item-<name>` overrides such as `object-fit: contain`,
+  a grey/letterbox `background`, `align-self: stretch`, flex centering, or an
+  explicit `border-radius` on the image. They were removed on purpose — a correctly
+  sized 2:3 image needs none of them.
+- **Rounded corners are automatic.** They come from the card itself
+  (`.event-item { overflow:hidden; border-radius:10px }`) and only show when the
+  image *fills* the column — which `cover` + a 2:3 image guarantees.
+
+## 5. Card markup & text rules (controls thumbnail height)
+
+The card height is driven by the **text column**, and the image stretches to match
+it. Long text → tall card → the image is cropped harder. Keep upcoming-event cards
+as short as the past ones:
+
+- Mirror the past-event structure exactly:
+  ```html
+  <div class="event-item">
+    <div class="event-image"><img src="images/<file>" alt="<event name>"></div>
+    <div class="event-content">
+      <h5 class="event-title">Title</h5>
+      <div class="event-address">One short description line</div>
+    </div>
+    <div class="event-date">
+      <div class="event-time">YYYY</div>
+      <div>MON-MON</div>
+    </div>
+  </div>
+  ```
+- Keep `.event-content` to a **title + ~2 lines** max. Do not embed full performer
+  lists, sponsor blocks, or booking details in the card — link out or use a details
+  page. (Aim for a card height of ~180–280px, matching Past Events.)
+
+## 6. File naming
+
+Use lowercase, hyphen/underscore, descriptive, dated:
+`<event-slug>_<year>[_<season>]_thumb.<ext>` — e.g. `spark_kerala_2026_aug_thumb.jpg`.
+Always set a meaningful `alt` describing the event.
+
+## 7. Pre-commit checklist
+
+- [ ] Image is **2:3 portrait** (≈1000×1500), sRGB, < ~300 KB.
+- [ ] Title + main subject are **centered**; nothing critical in the top/bottom 20%.
+- [ ] Card uses the shared markup; **no per-card image CSS overrides** added.
+- [ ] `.event-content` is title + ≤2 lines (card stays short like Past Events).
+- [ ] `alt` text set; filename follows the naming convention.
+- [ ] Verified at desktop **and** mobile widths that nothing important is cropped.
