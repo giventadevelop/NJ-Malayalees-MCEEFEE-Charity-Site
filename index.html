@@ -906,7 +906,7 @@
                 left: 50%;
                 width: 0;
                 height: 0;
-                background-image: url('images/spark_kerala_event_2026.jpeg');
+                background-image: url('images/veena_concert_2026.jpeg');
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -1897,6 +1897,15 @@
                 object-fit: cover;
             }
 
+            .event-item-veena .event-image {
+                width: 200px;
+            }
+
+            .event-item-veena .event-image img {
+                object-fit: cover;
+                object-position: center top;
+            }
+
             .event-content {
                 flex-grow: 1;
                 padding: 15px 20px;
@@ -2334,11 +2343,22 @@
                     justify-content: center;
                 }
 
+                .event-item-veena .event-image {
+                    width: 120px;
+                    min-width: 120px;
+                    height: auto;
+                    align-self: stretch;
+                }
+
                 .event-image img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                     object-position: center top;
+                }
+
+                .event-item-veena .event-image img {
+                    min-height: 120px;
                 }
 
                 .event-content {
@@ -2367,6 +2387,15 @@
                     width: 90px;
                     height: 90px;
                     min-width: 90px;
+                }
+
+                .event-item-veena .event-image {
+                    width: 100px;
+                    min-width: 100px;
+                }
+
+                .event-item-veena .event-image img {
+                    min-height: 100px;
                 }
 
                 .event-content {
@@ -2880,10 +2909,53 @@
                 padding-right: 15px;
             }
 
+            .event-details .event-tour {
+                display: block;
+                font-weight: 600;
+                color: var(--secondary-color);
+                margin-bottom: 12px;
+            }
+
+            .event-details .event-performer {
+                margin-bottom: 10px;
+            }
+
+            .event-details .event-performer-label {
+                display: block;
+                font-weight: 500;
+                color: var(--secondary-color);
+            }
+
+            .event-details .event-booking {
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid rgba(0, 0, 0, 0.08);
+            }
+
+            .event-details .event-booking-label {
+                display: block;
+                font-weight: 500;
+                margin-bottom: 4px;
+                color: var(--secondary-color);
+            }
+
+            .event-details .event-org {
+                display: block;
+                margin-top: 12px;
+                font-weight: 600;
+                color: var(--primary-color);
+                letter-spacing: 0.05em;
+            }
+
             @media (max-width: 768px) {
                 .event-address {
                     font-size: 13px;
                     padding-right: 10px;
+                }
+
+                .event-item-veena .event-image {
+                    width: 120px;
+                    min-width: 120px;
                 }
             }
 
@@ -3039,7 +3111,7 @@
         <section class="featured-event-section">
             <div class="container">
                 <a href="events.html" class="featured-event-link">
-                    <img src="images/spark_kerala_event_2026_fb_banner.jpg" alt="Spark of Kerala Season 2 - USA Tour May 2026" class="featured-event-image">
+                    <img src="images/veena_concert_2026.jpeg" alt="Veena Concert 2026" class="featured-event-image">
                 </a>
             </div>
         </section>
@@ -3340,29 +3412,31 @@
                             <h3>Exciting events & announcements</h3>
                         </div>
 
-                        <!-- New Event Item -->
-                        <div class="event-item">
+                        <!-- Event Item -->
+                        <div class="event-item event-item-veena">
                             <div class="event-image">
-                                <img src="images/spark_kerala_event_2026.jpeg" alt="SPARK OF KERALA 2026">
+                                <img src="images/veena_concert_2026.jpeg" alt="Nadha Varnika Veena Concert">
                             </div>
                             <div class="event-content">
-                                <h5 class="event-title">SPARK OF KERALA</h5>
-                                <div class="event-address">Celebrates the vibrant culture, art, and heritage of Kerala across the USA</div>
-                            </div>
-                            <div class="event-date">
-                                <div class="event-time">2026</div>
-                                <div>MAY-SEP</div>
-                            </div>
-                        </div>
-
-                        <!-- Existing Event Item -->
-                        <div class="event-item">
-                            <div class="event-image">
-                                <img src="images/Karnatic_Music_Festival.jpeg" alt="Karnatic Music Festival">
-                            </div>
-                            <div class="event-content">
-                                <h5 class="event-title">Karnatic Music Festival</h5>
-                                <div class="event-address">A Tribute to Kerala's Classical Melodies Across the USA</div>
+                                <h5 class="event-title">Nadha Varnika Veena Concert</h5>
+                                <div class="event-address event-details">
+                                    <span class="event-tour">USA Fall Tour 2026</span>
+                                    <div class="event-performer">
+                                        <span class="event-performer-label">Sangita Kala Acharya</span>
+                                        Dr. R.S. Jayalakshmi
+                                    </div>
+                                    <div class="event-performer">
+                                        <span class="event-performer-label">Kumari</span>
+                                        Charulatha Chandrasekar
+                                    </div>
+                                    <div class="event-performer">Kannan Tripunithura</div>
+                                    <div class="event-booking">
+                                        <span class="event-booking-label">For booking contact:</span>
+                                        Krish — (210) 549 7622<br>
+                                        Arun — (551) 221‑1972
+                                    </div>
+                                    <span class="event-org">MCEFEE</span>
+                                </div>
                             </div>
                             <div class="event-date">
                                 <div class="event-time">2026</div>
@@ -3372,6 +3446,21 @@
 
                         <div class="section-title-wrapper" style="margin-top: 30px;">
                             <h3>Past Events</h3>
+                        </div>
+
+                        <!-- Past Event Item -->
+                        <div class="event-item">
+                            <div class="event-image">
+                                <img src="images/spark_kerala_event_2026_1.jpg" alt="SPARK OF KERALA 2026">
+                            </div>
+                            <div class="event-content">
+                                <h5 class="event-title">SPARK OF KERALA</h5>
+                                <div class="event-address">Celebrates the vibrant culture, art, and heritage of Kerala across the USA</div>
+                            </div>
+                            <div class="event-date">
+                                <div class="event-time">2026</div>
+                                <div>MAY-JUN</div>
+                            </div>
                         </div>
 
                         <!-- Past Event Item -->
@@ -3744,4 +3833,5 @@
 });
         </script>
     </body>
+</html>
 </html>
