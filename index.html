@@ -811,15 +811,29 @@
             /* Featured Event Section */
             .featured-event-section {
                 width: 100%;
-                padding: 20px 0;
+                padding: 20px 0 40px;
                 background: #1c1c1c;
+                overflow: hidden;
             }
 
             .featured-event-link {
                 display: block;
                 width: 100%;
                 overflow: hidden;
-                border-radius: 4px;
+                margin-bottom: 20px;
+            }
+
+            .featured-event-link:last-child {
+                margin-bottom: 0;
+            }
+
+            .featured-event-title {
+                text-align: center;
+                color: #ffce59;
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin: 0 0 12px;
+                padding: 0 20px;
             }
 
             .featured-event-image {
@@ -906,7 +920,7 @@
                 left: 50%;
                 width: 0;
                 height: 0;
-                background-image: url('images/spark_kerala_event_2026.jpeg');
+                background-image: url('images/spark_kerala_event_2026_aug.jfif');
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -1879,6 +1893,7 @@
 
             .event-item {
                 display: flex;
+                align-items: stretch;
                 margin-bottom: 20px;
                 background: white;
                 border-radius: 10px;
@@ -2880,6 +2895,44 @@
                 padding-right: 15px;
             }
 
+            .event-details .event-tour {
+                display: block;
+                font-weight: 600;
+                color: var(--secondary-color);
+                margin-bottom: 12px;
+            }
+
+            .event-details .event-performer {
+                margin-bottom: 10px;
+            }
+
+            .event-details .event-performer-label {
+                display: block;
+                font-weight: 500;
+                color: var(--secondary-color);
+            }
+
+            .event-details .event-booking {
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid rgba(0, 0, 0, 0.08);
+            }
+
+            .event-details .event-booking-label {
+                display: block;
+                font-weight: 500;
+                margin-bottom: 4px;
+                color: var(--secondary-color);
+            }
+
+            .event-details .event-org {
+                display: block;
+                margin-top: 12px;
+                font-weight: 600;
+                color: var(--primary-color);
+                letter-spacing: 0.05em;
+            }
+
             @media (max-width: 768px) {
                 .event-address {
                     font-size: 13px;
@@ -3037,9 +3090,13 @@
 
         <!-- Featured Event -->
         <section class="featured-event-section">
-            <div class="container">
+            <a href="events.html" class="featured-event-link">
+                <img src="images/spark_kerala_event_2026_aug_wide.jpg" alt="Spark Kerala USA Tour Season 2" class="featured-event-image">
+            </a>
+            <div class="featured-event-item">
+                <h4 class="featured-event-title">Coming in Fall 2026</h4>
                 <a href="events.html" class="featured-event-link">
-                    <img src="images/spark_kerala_event_2026_fb_banner.jpg" alt="Spark of Kerala Season 2 - USA Tour May 2026" class="featured-event-image">
+                    <img src="images/veena_concert_2026_wide.jpg" alt="Veena Concert 2026" class="featured-event-image">
                 </a>
             </div>
         </section>
@@ -3340,29 +3397,41 @@
                             <h3>Exciting events & announcements</h3>
                         </div>
 
-                        <!-- New Event Item -->
-                        <div class="event-item">
+                        <!-- Event Item -->
+                        <div class="event-item event-item-spark">
                             <div class="event-image">
-                                <img src="images/spark_kerala_event_2026.jpeg" alt="SPARK OF KERALA 2026">
+                                <img src="images/spark_kerala_event_2026_aug_thum_higgs.png" alt="Spark Kerala USA Tour Season 2">
                             </div>
                             <div class="event-content">
-                                <h5 class="event-title">SPARK OF KERALA</h5>
-                                <div class="event-address">Celebrates the vibrant culture, art, and heritage of Kerala across the USA</div>
+                                <h5 class="event-title">Spark Kerala</h5>
+                                <div class="event-address event-details">
+                                    <span class="event-tour">Celebrating the Vibrant Spirit of Onam</span>
+                                    <div class="event-performer">
+                                        <span class="event-performer-label">MCEFEE Presents</span>
+                                        USA Tour Season 2
+                                    </div>
+                                </div>
                             </div>
                             <div class="event-date">
                                 <div class="event-time">2026</div>
-                                <div>MAY-SEP</div>
+                                <div>AUG-SEP</div>
                             </div>
                         </div>
 
-                        <!-- Existing Event Item -->
-                        <div class="event-item">
+                        <!-- Event Item -->
+                        <div class="event-item event-item-veena">
                             <div class="event-image">
-                                <img src="images/Karnatic_Music_Festival.jpeg" alt="Karnatic Music Festival">
+                                <img src="images/veena_concert_2026_wide_thumbnail_2.png" alt="Nadha Varnika Veena Concert">
                             </div>
                             <div class="event-content">
-                                <h5 class="event-title">Karnatic Music Festival</h5>
-                                <div class="event-address">A Tribute to Kerala's Classical Melodies Across the USA</div>
+                                <h5 class="event-title">Nadha Varnika Veena Concert</h5>
+                                <div class="event-address event-details">
+                                    <span class="event-tour">USA Fall Tour 2026</span>
+                                    <div class="event-performer">
+                                        <span class="event-performer-label">Sangita Kala Acharya</span>
+                                        Dr. R.S. Jayalakshmi
+                                    </div>
+                                </div>
                             </div>
                             <div class="event-date">
                                 <div class="event-time">2026</div>
@@ -3372,6 +3441,21 @@
 
                         <div class="section-title-wrapper" style="margin-top: 30px;">
                             <h3>Past Events</h3>
+                        </div>
+
+                        <!-- Past Event Item -->
+                        <div class="event-item">
+                            <div class="event-image">
+                                <img src="images/spark_kerala_event_2026_1.jpg" alt="SPARK OF KERALA 2026">
+                            </div>
+                            <div class="event-content">
+                                <h5 class="event-title">SPARK OF KERALA</h5>
+                                <div class="event-address">Celebrates the vibrant culture, art, and heritage of Kerala across the USA</div>
+                            </div>
+                            <div class="event-date">
+                                <div class="event-time">2026</div>
+                                <div>MAY-JUN</div>
+                            </div>
                         </div>
 
                         <!-- Past Event Item -->
@@ -3744,4 +3828,5 @@
 });
         </script>
     </body>
+</html>
 </html>
